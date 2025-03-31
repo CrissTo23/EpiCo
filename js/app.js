@@ -207,7 +207,7 @@ function caricaLezioniRecenti() {
     
     // Ottieni i metadati delle lezioni (potrebbe richiedere un'API in un'app reale)
     const lezioniData = {
-        '/materie/programmazione/lezione1.html': {
+        '/materie/programming/lezione1.html': { // Cambia programmazione in programming
             title: 'Introduzione alla Programmazione',
             materia: 'Programmazione',
             icon: 'fa-code'
