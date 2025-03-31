@@ -1,0 +1,188 @@
+/* Editor di Codice - Stili */
+.code-editor-container {
+    margin: 25px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #dadce0;
+}
+
+.code-editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #dadce0;
+}
+
+.code-editor-title {
+    font-weight: 600;
+    font-size: 16px;
+    color: #333;
+}
+
+.code-editor-languages {
+    display: flex;
+    gap: 10px;
+}
+
+.language-selector {
+    padding: 5px 10px;
+    background: white;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.language-selector.active {
+    background-color: #4285f4;
+    color: white;
+    border-color: #4285f4;
+}
+
+.code-editor-wrapper {
+    position: relative;
+    height: 250px;
+    border-bottom: 1px solid #dadce0;
+}
+
+#code-editor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 14px;
+    font-family: 'Courier New', monospace;
+}
+
+.code-editor-controls {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+}
+
+.code-editor-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.reset-code, .run-code, .submit-solution {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.reset-code {
+    background-color: #f5f5f5;
+    border: 1px solid #dadce0;
+    color: #333;
+}
+
+.run-code {
+    background-color: #34a853;
+    color: white;
+}
+
+.submit-solution {
+    background-color: #4285f4;
+    color: white;
+}
+
+.reset-code:hover {
+    background-color: #e8e8e8;
+}
+
+.run-code:hover {
+    background-color: #2d9348;
+}
+
+.submit-solution:hover {
+    background-color: #3367d6;
+}
+
+.output-container {
+    background-color: #1e1e1e;
+    color: #f8f8f8;
+    padding: 15px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    min-height: 100px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.challenge-container {
+    padding: 15px;
+    background-color: #f0f7ff;
+    border-left: 4px solid #4285f4;
+}
+
+.challenge-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.challenge-description {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.challenge-example {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-family: 'Courier New', monospace;
+}
+
+.feedback-message {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    display: none;
+}
+
+.feedback-message.success {
+    background-color: #e6f4ea;
+    color: #137333;
+    border: 1px solid #137333;
+    display: block;
+}
+
+.feedback-message.error {
+    background-color: #fce8e6;
+    color: #c5221f;
+    border: 1px solid #c5221f;
+    display: block;
+}
+
+.hint-button {
+    background: none;
+    border: none;
+    color: #4285f4;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.hint-content {
+    padding: 10px;
+    background-color: #fffde7;
+    border-left: 4px solid #fbbc05;
+    margin-top: 10px;
+    display: none;
+}
+
+.hint-content.visible {
+    display: block;
+}

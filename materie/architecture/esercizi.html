@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizi di Programmazione | EpiCo</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/editor.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#4285f4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="EpiCo">
+    <link rel="apple-touch-icon" href="/images/icons/icon-152x152.png">
+    <!-- Font Awesome per le icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar/Menu laterale -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <img src="/images/logo.png" alt="EpiCo Logo" class="logo">
+                <h2>EpiCo</h2>
+                <button id="closeSidebar" class="close-sidebar"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="sidebar-content">
+                <nav class="sidebar-menu">
+                    <ul>
+                        <li class="menu-item">
+                            <a href="/index.html"><i class="fas fa-home"></i> Home</a>
+                        </li>
+                        <li class="menu-item menu-dropdown open">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="fas fa-code"></i> Principi di Programmazione <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="submenu" style="max-height: 300px;">
+                                <li><a href="/materie/programming/index.html">Panoramica</a></li>
+                                <li><a href="/materie/programming/lezione1.html">Introduzione alla Programmazione</a></li>
+                                <li><a href="/materie/programming/lezione2.html">Variabili e Tipi di Dati</a></li>
+                                <li><a href="/materie/programming/lezione3.html">Controllo di Flusso</a></li>
+                                <li class="active"><a href="/materie/programming/esercizi.html">Esercizi Interattivi</a></li>
+                            </ul>
+                        </li>
+                        <!-- Altre materie nel menu -->
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="sidebar-footer">
+                <a href="/impostazioni.html"><i class="fas fa-cog"></i> Impostazioni</a>
+            </div>
+        </aside>
+
+        <!-- Contenuto principale -->
+        <main class="main-content">
+            <header class="top-bar">
+                <button id="toggleSidebar" class="menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="search-container">
+                    <input type="text" placeholder="Cerca esercizi..." class="search-input" id="search-exercises">
+                    <button class="search-button"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="user-profile">
+                    <img src="/images/profile-placeholder.jpg" alt="Profilo" class="profile-image">
+                </div>
+            </header>
+
+            <div class="content">
+                <div class="lesson-header">
+                    <a href="/materie/programming/index.html" class="breadcrumb"><i class="fas fa-chevron-left"></i> Principi di Programmazione</a>
+                    <h1>Esercizi Interattivi di Programmazione</h1>
+                </div>
+
+                <div class="exercises-dashboard">
+                    <!-- Filtri -->
+                    <div class="exercises-filters">
+                        <div class="filter-group">
+                            <label>Difficoltà:</label>
+                            <select id="difficulty-filter">
+                                <option value="all">Tutti</option>
+                                <option value="principiante">Principiante</option>
+                                <option value="intermedio">Intermedio</option>
+                                <option value="avanzato">Avanzato</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label>Lezione:</label>
+                            <select id="lesson-filter">
+                                <option value="all">Tutte</option>
+                                <option value="lezione1">Lezione 1: Introduzione</option>
+                                <option value="lezione2">Lezione 2: Variabili</option>
+                                <option value="lezione3">Lezione 3: Controllo di Flusso</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label>Stato:</label>
+                            <select id="status-filter">
+                                <option value="all">Tutti</option>
+                                <option value="completed">Completati</option>
+                                <option value="uncompleted">Da completare</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Lista esercizi -->
+                    <div class="exercises-list" id="exercises-container">
+                        <!-- Gli esercizi verranno caricati dinamicamente qui -->
+                        <div class="loading-spinner">
+                            <i class="fas fa-spinner fa-spin"></i> Caricamento esercizi...
+                        </div>
+                    </div>
+                    
+                    <!-- Editor di codice -->
+                    <div class="code-editor-full" id="code-editor-container" style="display: none;">
+                        <div class="editor-header">
+                            <div class="editor-title" id="exercise-title">Titolo dell'esercizio</div>
+                            <div class="editor-actions">
+                                <button id="close-editor" class="close-editor-btn"><i class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+                        
+                        <div class="editor-content">
+                            <div class="editor-sidebar">
+                                <div class="editor-description-panel">
+                                    <h3>Descrizione</h3>
+                                    <div id="exercise-description" class="description-content">
+                                        <!-- Descrizione esercizio -->
+                                    </div>
+                                    
+                                    <div class="hint-panel">
+                                        <button id="show-hint" class="hint-button">Mostra suggerimento</button>
+                                        <div id="hint-content" class="hint-content">
+                                            <!-- Suggerimento -->
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="language-selector-panel">
+                                    <h3>Linguaggio</h3>
+                                    <div class="language-buttons">
+                                        <button class="language-btn active" data-lang="python">Python</button>
+                                        <button class="language-btn" data-lang="javascript">JavaScript</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="editor-main">
+                                <div class="code-panel">
+                                    <div id="code-editor"></div>
+                                </div>
+                                
+                                <div class="editor-controls">
+                                    <button id="reset-code" class="editor-btn"><i class="fas fa-undo"></i> Reset</button>
+                                    <button id="run-code" class="editor-btn primary"><i class="fas fa-play"></i> Esegui</button>
+                                    <button id="submit-solution" class="editor-btn success"><i class="fas fa-check"></i> Verifica</button>
+                                </div>
+                                
+                                <div class="output-panel">
+                                    <div class="output-header">
+                                        <span>Output</span>
+                                        <button id="clear-output" class="clear-btn"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                    <div id="code-output" class="output-content">
+                                        > Esegui il codice per vedere l'output qui
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="feedback-panel" class="feedback-panel">
+                            <!-- Feedback dopo la verifica -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-python.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-javascript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/theme-monokai.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.js"></script>
+    <script src="/js/exercises.js"></script>
+</body>
+</html>

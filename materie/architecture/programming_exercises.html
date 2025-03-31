@@ -1,0 +1,44 @@
+{
+    "exercises": [
+      {
+        "id": "intro-hello-world",
+        "title": "Hello World",
+        "description": "Scrivi un programma che stampi \"Ciao, mondo!\" sullo schermo.",
+        "difficulty": "principiante",
+        "relatedLessons": ["lezione1"],
+        "languages": {
+          "python": {
+            "startingCode": "# Scrivi un programma che stampi \"Ciao, mondo!\"\n\ndef main():\n    # Inserisci qui il tuo codice\n    pass\n\nmain()",
+            "solution": "# Scrivi un programma che stampi \"Ciao, mondo!\"\n\ndef main():\n    print(\"Ciao, mondo!\")\n\nmain()",
+            "hint": "Usa la funzione print() per mostrare testo sullo schermo."
+          },
+          "javascript": {
+            "startingCode": "// Scrivi un programma che stampi \"Ciao, mondo!\"\n\nfunction main() {\n    // Inserisci qui il tuo codice\n}\n\nmain();",
+            "solution": "// Scrivi un programma che stampi \"Ciao, mondo!\"\n\nfunction main() {\n    console.log(\"Ciao, mondo!\");\n}\n\nmain();",
+            "hint": "Usa console.log() per mostrare testo nella console JavaScript."
+          }
+        },
+        "testCode": "function testSolution(code, language) {\n  if (language === 'python') {\n    // Verifica se l'output contiene 'Ciao, mondo!'\n    const output = runPythonCode(code);\n    return output.includes('Ciao, mondo!');\n  } else if (language === 'javascript') {\n    // Verifica se il codice contiene console.log('Ciao, mondo!')\n    return /console\\.log\\(['\"]Ciao, mondo!['\"]\\)/.test(code);\n  }\n  return false;\n}"
+      },
+      {
+        "id": "variables-sum",
+        "title": "Somma di due numeri",
+        "description": "Scrivi un programma che sommi due numeri (5 e 3) e stampi il risultato.",
+        "difficulty": "principiante",
+        "relatedLessons": ["lezione2"],
+        "languages": {
+          "python": {
+            "startingCode": "# Scrivi un programma che sommi 5 e 3 e stampi il risultato\n\ndef calcola_somma():\n    # Inserisci qui il tuo codice\n    pass\n\ncalcola_somma()",
+            "solution": "# Scrivi un programma che sommi 5 e 3 e stampi il risultato\n\ndef calcola_somma():\n    a = 5\n    b = 3\n    somma = a + b\n    print(somma)\n\ncalcola_somma()",
+            "hint": "Assegna i valori a due variabili, poi usa l'operatore + per sommarli."
+          },
+          "javascript": {
+            "startingCode": "// Scrivi un programma che sommi 5 e 3 e stampi il risultato\n\nfunction calcolaSomma() {\n    // Inserisci qui il tuo codice\n}\n\ncalcolaSomma();",
+            "solution": "// Scrivi un programma che sommi 5 e 3 e stampi il risultato\n\nfunction calcolaSomma() {\n    let a = 5;\n    let b = 3;\n    let somma = a + b;\n    console.log(somma);\n}\n\ncalcolaSomma();",
+            "hint": "Assegna i valori a due variabili, poi usa l'operatore + per sommarli."
+          }
+        },
+        "testCode": "function testSolution(code, language) {\n  if (language === 'python') {\n    const output = runPythonCode(code);\n    return output.includes('8');\n  } else if (language === 'javascript') {\n    return /console\\.log\\(.*8.*\\)/.test(code) || /console\\.log\\(.*[a-zA-Z0-9_].*\\)/.test(code);\n  }\n  return false;\n}"
+      }
+    ]
+  }
