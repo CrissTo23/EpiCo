@@ -1,0 +1,37 @@
+{
+  "lesson": {
+    "id": "lezione1",
+    "title": "Introduzione alla Programmazione",
+    "course": "programming"
+  },
+  "terms": [
+    {
+      "term": "Algoritmo",
+      "definition": "Un insieme finito di istruzioni ben definite che, se eseguite correttamente, consentono di svolgere un determinato compito o risolvere un problema."
+    },
+    {
+      "term": "Compilatore",
+      "definition": "Un programma che traduce il codice sorgente scritto in un linguaggio di programmazione in codice macchina o in un altro linguaggio di programmazione di più basso livello."
+    },
+    {
+      "term": "IDE (Integrated Development Environment)",
+      "definition": "Un software che fornisce agli sviluppatori strumenti completi per lo sviluppo del software, come editor di codice, debugger e compilatore."
+    },
+    {
+      "term": "Interprete",
+      "definition": "Un programma che esegue direttamente il codice sorgente senza necessità di compilazione preliminare, traducendo le istruzioni in tempo reale."
+    },
+    {
+      "term": "Linguaggio di programmazione",
+      "definition": "Un sistema di notazione formale progettato per comunicare istruzioni a un computer, composto da sintassi (forma) e semantica (significato)."
+    },
+    {
+      "term": "Debugging",
+      "definition": "Il processo di identificazione, analisi e rimozione di errori o bug nel codice di un programma."
+    },
+    {
+      "term": "Sintassi",
+      "definition": "Le regole che definiscono come le istruzioni e le espressioni devono essere scritte in un linguaggio di programmazione."
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+/* Stili per i componenti delle lezioni (tab, glossario, esercizi) */
+
+/* Tab di navigazione */
+.lesson-tabs {
+    display: flex;
+    background-color: var(--bg-color);
+    border-radius: var(--radius) var(--radius) 0 0;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 0;
+}
+
+.tab-btn {
+    padding: 15px 25px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: var(--transition);
+    border-bottom: 3px solid transparent;
+    border-left: 1px solid var(--border-color);
+}
+
+.tab-btn:first-child {
+    border-left: none;
+}
+
+.tab-btn:hover {
+    background-color: var(--bg-light);
+}
+
+.tab-btn.active {
+    border-bottom-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Contenuto dei tab */
+.tab-content {
+    display: none;
+    background-color: var(--bg-color);
+    border-radius: 0 0 var(--radius) var(--radius);
+    box-shadow: var(--shadow);
+    margin-top: 0;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Glossario della lezione */
+.lesson-glossary {
+    padding: 30px;
+}
+
+.lesson-glossary h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.glossary-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.glossary-item {
+    background-color: var(--bg-light);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.glossary-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.glossary-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.glossary-item p {
+    font-size: 15px;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.glossary-navigation, .exercises-navigation {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.btn-view-all {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-view-all:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Esercizi della lezione */
+.lesson-exercises {
+    padding: 30px;
+}
+
+.lesson-exercises h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.exercise-item {
+    margin-bottom: 40px;
+    background-color: var(--bg-light);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.exercise-item h3 {
+    padding: 15px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 18px;
+    margin: 0;
+}
+
+.exercise-item p {
+    padding: 15px 20px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Info box, code blocks e altri elementi formattativi */
+.info-box, .tip-block, .example-block {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: var(--radius);
+}
+
+.info-box {
+    background-color: #f0f7ff;
+    border-left: 4px solid var(--primary-color);
+}
+
+.tip-block {
+    background-color: #e6f7ee;
+    border-left: 4px solid var(--accent-color);
+}
+
+.example-block {
+    background-color: #fff8e6;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.info-box h4, .tip-block h4, .example-block h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .lesson-tabs {
+        flex-direction: column;
+    }
+    
+    .tab-btn {
+        border-left: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .tab-btn.active {
+        border-bottom-color: var(--border-color);
+        border-left: 3px solid var(--primary-color);
+    }
+    
+    .glossary-items {
+        grid-template-columns: 1fr;
+    }
+}

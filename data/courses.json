@@ -1,0 +1,394 @@
+{
+  "courses": [
+    {
+      "id": "programming",
+      "title": "Principi di Programmazione",
+      "icon": "fas fa-code",
+      "description": "Impara le basi e i concetti avanzati della programmazione",
+      "lessons": [
+        {
+          "id": "lezione1",
+          "title": "Introduzione alla Programmazione",
+          "path": "/materie/programming/lezione1.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione2",
+          "title": "Variabili e Tipi di Dati",
+          "path": "/materie/programming/lezione2.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione3",
+          "title": "Controllo di Flusso",
+          "path": "/materie/programming/lezione3.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione4",
+          "title": "Funzioni",
+          "path": "/materie/programming/lezione4.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione5",
+          "title": "Strutture Dati",
+          "path": "/materie/programming/lezione5.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione6",
+          "title": "Programmazione Orientata agli Oggetti",
+          "path": "/materie/programming/lezione6.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione7",
+          "title": "Gestione dei File",
+          "path": "/materie/programming/lezione7.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione8",
+          "title": "Gestione degli Errori",
+          "path": "/materie/programming/lezione8.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione9",
+          "title": "Algoritmi Fondamentali",
+          "path": "/materie/programming/lezione9.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione10",
+          "title": "Programmazione Funzionale",
+          "path": "/materie/programming/lezione10.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        }
+      ]
+    },
+    {
+      "id": "webdev",
+      "title": "Web Development",
+      "icon": "fas fa-laptop-code",
+      "description": "Crea siti web moderni con HTML, CSS e JavaScript",
+      "lessons": [
+        {
+          "id": "lezione1",
+          "title": "HTML Fondamenti",
+          "path": "/materie/webdev/lezione1.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione2",
+          "title": "CSS Styling",
+          "path": "/materie/webdev/lezione2.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione3",
+          "title": "JavaScript Base",
+          "path": "/materie/webdev/lezione3.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione4",
+          "title": "Responsive Design",
+          "path": "/materie/webdev/lezione4.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione5",
+          "title": "JavaScript Avanzato",
+          "path": "/materie/webdev/lezione5.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione6",
+          "title": "DOM Manipulation",
+          "path": "/materie/webdev/lezione6.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione7",
+          "title": "API e AJAX",
+          "path": "/materie/webdev/lezione7.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione8",
+          "title": "Framework Front-end",
+          "path": "/materie/webdev/lezione8.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione9",
+          "title": "Introduzione a Node.js",
+          "path": "/materie/webdev/lezione9.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione10",
+          "title": "Sviluppo Web Full-Stack",
+          "path": "/materie/webdev/lezione10.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        }
+      ]
+    },
+    {
+      "id": "architecture",
+      "title": "Architettura dei Calcolatori",
+      "icon": "fas fa-microchip",
+      "description": "Comprendi come funzionano internamente i computer",
+      "lessons": [
+        {
+          "id": "lezione1",
+          "title": "Introduzione all'Architettura dei Calcolatori",
+          "path": "/materie/architecture/lezione1.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione2",
+          "title": "Rappresentazione dei Dati",
+          "path": "/materie/architecture/lezione2.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione3",
+          "title": "Circuiti Logici",
+          "path": "/materie/architecture/lezione3.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione4",
+          "title": "CPU: Architettura e Funzionamento",
+          "path": "/materie/architecture/lezione4.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione5",
+          "title": "Memoria e Gerarchia di Memoria",
+          "path": "/materie/architecture/lezione5.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione6",
+          "title": "Sistemi di I/O",
+          "path": "/materie/architecture/lezione6.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione7",
+          "title": "Pipeline e Parallelismo",
+          "path": "/materie/architecture/lezione7.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione8",
+          "title": "Architetture RISC e CISC",
+          "path": "/materie/architecture/lezione8.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione9",
+          "title": "Multiprocessori e Multicore",
+          "path": "/materie/architecture/lezione9.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione10",
+          "title": "Tendenze Future e Nuove Architetture",
+          "path": "/materie/architecture/lezione10.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        }
+      ]
+    },
+    {
+      "id": "networks",
+      "title": "Reti di Calcolatori",
+      "icon": "fas fa-network-wired",
+      "description": "Scopri come i computer comunicano tra loro",
+      "lessons": [
+        {
+          "id": "lezione1",
+          "title": "Introduzione alle Reti",
+          "path": "/materie/networks/lezione1.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione2",
+          "title": "Modello OSI e TCP/IP",
+          "path": "/materie/networks/lezione2.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione3",
+          "title": "Livello Fisico",
+          "path": "/materie/networks/lezione3.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione4",
+          "title": "Livello Data Link",
+          "path": "/materie/networks/lezione4.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione5",
+          "title": "Livello Rete e IP",
+          "path": "/materie/networks/lezione5.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione6",
+          "title": "Routing",
+          "path": "/materie/networks/lezione6.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione7",
+          "title": "Livello Trasporto: TCP e UDP",
+          "path": "/materie/networks/lezione7.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione8",
+          "title": "Livello Applicazione e Protocolli",
+          "path": "/materie/networks/lezione8.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione9",
+          "title": "Sicurezza delle Reti",
+          "path": "/materie/networks/lezione9.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione10",
+          "title": "Reti Avanzate e SDN",
+          "path": "/materie/networks/lezione10.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        }
+      ]
+    },
+    {
+      "id": "mathematics",
+      "title": "Matematica Discreta",
+      "icon": "fas fa-calculator",
+      "description": "Esplora i fondamenti matematici dell'informatica",
+      "lessons": [
+        {
+          "id": "lezione1",
+          "title": "Insiemi e Logica",
+          "path": "/materie/mathematics/lezione1.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione2",
+          "title": "Relazioni e Funzioni",
+          "path": "/materie/mathematics/lezione2.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione3",
+          "title": "Teoria dei Numeri",
+          "path": "/materie/mathematics/lezione3.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione4",
+          "title": "Combinatoria",
+          "path": "/materie/mathematics/lezione4.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione5",
+          "title": "Teoria dei Grafi I",
+          "path": "/materie/mathematics/lezione5.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione6",
+          "title": "Teoria dei Grafi II",
+          "path": "/materie/mathematics/lezione6.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione7",
+          "title": "Algebre Booleane",
+          "path": "/materie/mathematics/lezione7.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione8",
+          "title": "Probabilità Discreta",
+          "path": "/materie/mathematics/lezione8.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione9",
+          "title": "Linguaggi Formali",
+          "path": "/materie/mathematics/lezione9.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        },
+        {
+          "id": "lezione10",
+          "title": "Automi e Calcolabilità",
+          "path": "/materie/mathematics/lezione10.html",
+          "hasGlossary": true,
+          "hasExercises": true
+        }
+      ]
+    }
+  ]
+}

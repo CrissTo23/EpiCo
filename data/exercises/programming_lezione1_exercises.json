@@ -1,0 +1,71 @@
+{
+  "lesson": {
+    "id": "lezione1",
+    "title": "Introduzione alla Programmazione",
+    "course": "programming"
+  },
+  "exercises": [
+    {
+      "id": "intro-hello-world",
+      "title": "Il tuo primo 'Hello, World!'",
+      "description": "Scrivi un programma che stampi 'Hello, World!' sulla console.",
+      "difficulty": "principiante",
+      "languages": {
+        "python": {
+          "startingCode": "# Scrivi un programma che stampi 'Hello, World!'\n\ndef main():\n    # Scrivi il tuo codice qui\n    pass\n\nmain()",
+          "solution": "# Scrivi un programma che stampi 'Hello, World!'\n\ndef main():\n    print(\"Hello, World!\")\n\nmain()",
+          "hint": "Usa la funzione print() per mostrare testo sullo schermo."
+        },
+        "javascript": {
+          "startingCode": "// Scrivi un programma che stampi 'Hello, World!'\n\nfunction main() {\n    // Scrivi il tuo codice qui\n}\n\nmain();",
+          "solution": "// Scrivi un programma che stampi 'Hello, World!'\n\nfunction main() {\n    console.log(\"Hello, World!\");\n}\n\nmain();",
+          "hint": "Usa console.log() per mostrare testo nella console JavaScript."
+        },
+        "java": {
+          "startingCode": "// Scrivi un programma che stampi 'Hello, World!'\n\npublic class Main {\n    public static void main(String[] args) {\n        // Scrivi il tuo codice qui\n    }\n}",
+          "solution": "// Scrivi un programma che stampi 'Hello, World!'\n\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, World!\");\n    }\n}",
+          "hint": "Usa System.out.println() per mostrare testo nella console Java."
+        }
+      },
+      "testCode": "function testSolution(code, language) {\n  if (language === 'python') {\n    // Verifica se l'output contiene 'Hello, World!'\n    const output = runPythonCode(code);\n    return output.includes('Hello, World!');\n  } else if (language === 'javascript') {\n    // Verifica se il codice contiene console.log('Hello, World!')\n    return /console\\.log\\(['\"]Hello, World!['\"]\\)/.test(code);\n  } else if (language === 'java') {\n    // Verifica se il codice contiene System.out.println('Hello, World!')\n    return /System\\.out\\.println\\(['\"]Hello, World!['\"]\\)/.test(code);\n  }\n  return false;\n}"
+    },
+    {
+      "id": "intro-comments",
+      "title": "Commenti nel codice",
+      "description": "Aggiungi commenti appropriati al seguente codice per spiegare cosa fa.",
+      "difficulty": "principiante",
+      "languages": {
+        "python": {
+          "startingCode": "def calcola(a, b):\n    risultato = a + b\n    return risultato\n\nnum1 = 10\nnum2 = 5\nrisp = calcola(num1, num2)\nprint(risp)",
+          "solution": "# Funzione per calcolare la somma di due numeri\ndef calcola(a, b):\n    # Calcola la somma dei due parametri\n    risultato = a + b\n    # Restituisce il risultato\n    return risultato\n\n# Definizione delle variabili\nnum1 = 10  # Primo numero\nnum2 = 5   # Secondo numero\n# Chiama la funzione calcola con i numeri definiti\nrisp = calcola(num1, num2)\n# Stampa il risultato\nprint(risp)",
+          "hint": "In Python, i commenti su una singola riga iniziano con #. Spiega lo scopo della funzione, dei parametri e del codice principale."
+        },
+        "javascript": {
+          "startingCode": "function calcola(a, b) {\n    var risultato = a + b;\n    return risultato;\n}\n\nvar num1 = 10;\nvar num2 = 5;\nvar risp = calcola(num1, num2);\nconsole.log(risp);",
+          "solution": "/**\n * Funzione per calcolare la somma di due numeri\n * @param {number} a - Primo numero\n * @param {number} b - Secondo numero\n * @returns {number} La somma dei due numeri\n */\nfunction calcola(a, b) {\n    // Calcola la somma dei due parametri\n    var risultato = a + b;\n    // Restituisce il risultato\n    return risultato;\n}\n\n// Definizione delle variabili\nvar num1 = 10;  // Primo numero\nvar num2 = 5;   // Secondo numero\n// Chiama la funzione calcola con i numeri definiti\nvar risp = calcola(num1, num2);\n// Stampa il risultato\nconsole.log(risp);",
+          "hint": "In JavaScript, i commenti su una singola riga iniziano con // e i commenti multi-riga con /* */. Puoi anche usare commenti in stile JSDoc per documentare le funzioni."
+        }
+      },
+      "testCode": "function testSolution(code, language) {\n  if (language === 'python') {\n    // Verifica se ci sono almeno 3 commenti nel codice Python\n    const commentCount = (code.match(/#/g) || []).length;\n    return commentCount >= 3;\n  } else if (language === 'javascript') {\n    // Verifica se ci sono almeno 3 commenti in JavaScript\n    const singleLineComments = (code.match(/\\/\\//g) || []).length;\n    const multiLineCommentsStart = (code.match(/\\/\\*/g) || []).length;\n    const multiLineCommentsEnd = (code.match(/\\*\\//g) || []).length;\n    return (singleLineComments + multiLineCommentsStart) >= 3;\n  }\n  return false;\n}"
+    },
+    {
+      "id": "intro-personal",
+      "title": "Personalizzazione del messaggio",
+      "description": "Modifica il programma per chiedere il nome dell'utente e salutarlo con un messaggio personalizzato.",
+      "difficulty": "principiante",
+      "languages": {
+        "python": {
+          "startingCode": "# Scrivi un programma che chiede il nome dell'utente e lo saluta\n\ndef saluta():\n    # Scrivi il tuo codice qui\n    pass\n\nsaluta()",
+          "solution": "# Scrivi un programma che chiede il nome dell'utente e lo saluta\n\ndef saluta():\n    nome = input(\"Come ti chiami? \")\n    print(f\"Ciao, {nome}! Benvenuto nel mondo della programmazione!\")\n\nsaluta()",
+          "hint": "Usa la funzione input() per ottenere il nome dell'utente e print() per mostrare il messaggio. Puoi usare la f-string per incorporare variabili in una stringa."
+        },
+        "javascript": {
+          "startingCode": "// Scrivi un programma che chiede il nome dell'utente e lo saluta\n\nfunction saluta() {\n    // Scrivi il tuo codice qui\n}\n\nsaluta();",
+          "solution": "// Scrivi un programma che chiede il nome dell'utente e lo saluta\n\nfunction saluta() {\n    const nome = prompt(\"Come ti chiami?\");\n    console.log(`Ciao, ${nome}! Benvenuto nel mondo della programmazione!`);\n}\n\nsaluta();",
+          "hint": "Usa la funzione prompt() per ottenere il nome dell'utente e console.log() per mostrare il messaggio. Puoi usare i template literals (backtick `) per incorporare variabili in una stringa."
+        }
+      },
+      "testCode": "function testSolution(code, language) {\n  if (language === 'python') {\n    // Verifica se il codice usa input() e print()\n    return code.includes('input(') && code.includes('print(');\n  } else if (language === 'javascript') {\n    // Verifica se il codice usa prompt() e console.log()\n    return code.includes('prompt(') && code.includes('console.log(');\n  }\n  return false;\n}"
+    }
+  ]
+}

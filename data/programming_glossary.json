@@ -1,0 +1,190 @@
+{
+  "course": "programming",
+  "title": "Glossario di Programmazione",
+  "terms": [
+    {
+      "term": "Algoritmo",
+      "definition": "Un insieme finito di istruzioni ben definite che, se eseguite correttamente, consentono di svolgere un determinato compito o risolvere un problema.",
+      "relatedLesson": {
+        "path": "/materie/programming/lezione1.html",
+        "title": "Introduzione alla Programmazione"
+      }
+    },
+    {
+      "term": "Array",
+      "definition": "Una struttura dati che contiene una collezione di elementi dello stesso tipo, accessibili tramite indice.",
+      "relatedLesson": {
+        "path": "/materie/programming/lezione5.html",
+        "title": "Strutture Dati"
+      }
+    },
+    {
+      "term": "Booleano",
+      "definition": "Un tipo di dato che può assumere solo due valori: vero (true) o falso (false).",
+      "relatedLesson": {
+        "path": "/materie/programming/lezione2.html",
+        "title": "Variabili e Tipi di Dati"
+      }
+    },
+    {
+      "term": "Ciclo",
+      "definition": "Una struttura di controllo che permette di eseguire ripetutamente un blocco di codice fino a quando una determinata condizione è soddisfatta.",
+      "relatedLesson": {
+        "path": "/materie/programming/lezione3.html",
+        "title": "Controllo di Flusso"
+      }
+    },
+    {
+      "term": "Classe",
+      "definition": "Un modello che definisce le proprietà e i comportamenti di un oggetto in programmazione orientata agli oggetti.",
+      "relatedLesson": {
+        "path": "/materie/programming/lezione6.html",
+        "title": "Programmazione Orientata agli Oggetti"
+      }
+    },
+    {
+      "term": "Compilatore",
+      "definition": "Un programma che traduce il codice sorgente scritto in un linguaggio di programmazione in codice macchina o in un altro linguaggio di programmazione di più basso livello.",
+      "relatedLesson": {
+        "path": "/materie/programming/lezione1.html",
+        "title": "Introduzione alla Programmazione"
+      }
+    },
+    {
+      "term": "Debugger",
+      "definition": "Uno strumento di sviluppo software che aiuta a identificare e risolvere errori (bug) nel codice.",
+      "relatedLesson": {
+        "path": "/materie/programming/lezione8.html",
+        "title": "Gestione degli Errori"
+      }
+    },
+    {
+      "term": "Ereditarietà",
+      "definition": "Un meccanismo della programmazione orientata agli oggetti che permette a una classe (classe derivata) di ereditare le caratteristiche di un'altra classe (classe base).",
+      "relatedLesson": {
+        "path": "/materie/programming/lezione6.html",
+        "title": "Programmazione Orientata agli Oggetti"
+      }
+    },
+    {
+      "term": "Funzione",
+      "definition": "Un blocco di codice riutilizzabile che esegue una specifica operazione quando viene chiamato.",
+      "relatedLesson": {
+        "path": "/materie/programming/lezione4.html",
+        "title": "Funzioni"
+      }
+    },
+    {
+      "term": "Garbage Collection",
+      "definition": "Un sistema automatico di gestione della memoria che identifica e libera la memoria occupata da oggetti non più utilizzati dal programma.",
+      "relatedLesson": {
+        "path": "/materie/programming/lezione5.html",
+        "title": "Strutture Dati"
+      }
+    },
+    {
+      "term": "IDE (Integrated Development Environment)",
+      "definition": "Un software che fornisce agli sviluppatori strumenti completi per lo sviluppo del software, come editor di codice, debugger e compilatore.",
+      "relatedLesson": {
+        "path": "/materie/programming/lezione1.html",
+        "title": "Introduzione alla Programmazione"
+      }
+    },
+    {
+      "term": "JSON (JavaScript Object Notation)",
+      "definition": "Un formato di scambio dati leggero e indipendente dal linguaggio, usato principalmente per trasmettere dati tra un server e un'applicazione web.",
+      "relatedLesson": {
+        "path": "/materie/programming/lezione7.html",
+        "title": "Gestione dei File"
+      }
+    },
+    {
+      "term": "Libreria",
+      "definition": "Una collezione di funzioni, classi o risorse predefinite che possono essere utilizzate per estendere le funzionalità di un programma.",
+      "relatedLesson": {
+        "path": "/materie/programming/lezione4.html",
+        "title": "Funzioni"
+      }
+    },
+    {
+      "term": "Loop infinito",
+      "definition": "Un ciclo la cui condizione di terminazione non viene mai soddisfatta, facendo sì che il ciclo si esegua indefinitamente.",
+      "relatedLesson": {
+        "path": "/materie/programming/lezione3.html",
+        "title": "Controllo di Flusso"
+      }
+    },
+    {
+      "term": "Metodo",
+      "definition": "Una funzione associata a una classe o a un oggetto in programmazione orientata agli oggetti.",
+      "relatedLesson": {
+        "path": "/materie/programming/lezione6.html",
+        "title": "Programmazione Orientata agli Oggetti"
+      }
+    },
+    {
+      "term": "Namespace",
+      "definition": "  Un contenitore che permette di organizzare codice e prevenire conflitti di nomi, raggruppando elementi correlati sotto un nome comune.",
+      "relatedLesson": {
+        "path": "/materie/programming/lezione6.html",
+        "title": "Programmazione Orientata agli Oggetti"
+      }
+    },
+    {
+      "term": "Oggetto",
+      "definition": "Un'istanza di una classe che rappresenta un'entità con proprietà (attributi) e comportamenti (metodi).",
+      "relatedLesson": {
+        "path": "/materie/programming/lezione6.html",
+        "title": "Programmazione Orientata agli Oggetti"
+      }
+    },
+    {
+      "term": "Polimorfismo",
+      "definition": "La capacità di oggetti di classi diverse di rispondere allo stesso messaggio in modi diversi.",
+      "relatedLesson": {
+        "path": "/materie/programming/lezione6.html",
+        "title": "Programmazione Orientata agli Oggetti"
+      }
+    },
+    {
+      "term": "Ricorsione",
+      "definition": "Una tecnica di programmazione in cui una funzione chiama se stessa per risolvere un problema.",
+      "relatedLesson": {
+        "path": "/materie/programming/lezione4.html",
+        "title": "Funzioni"
+      }
+    },
+    {
+      "term": "Stack",
+      "definition": "Una struttura dati che segue il principio LIFO (Last In, First Out) per l'inserimento e la rimozione degli elementi.",
+      "relatedLesson": {
+        "path": "/materie/programming/lezione5.html",
+        "title": "Strutture Dati"
+      }
+    },
+    {
+      "term": "Thread",
+      "definition": "Un flusso di esecuzione che può essere eseguito concorrentemente con altri flussi all'interno di un processo.",
+      "relatedLesson": {
+        "path": "/materie/programming/lezione10.html",
+        "title": "Programmazione Funzionale"
+      }
+    },
+    {
+      "term": "Variabile",
+      "definition": "Un contenitore per memorizzare dati che possono essere modificati durante l'esecuzione di un programma.",
+      "relatedLesson": {
+        "path": "/materie/programming/lezione2.html",
+        "title": "Variabili e Tipi di Dati"
+      }
+    },
+    {
+      "term": "XML (eXtensible Markup Language)",
+      "definition": "Un linguaggio di markup che definisce un insieme di regole per codificare documenti in un formato leggibile sia dall'uomo che dalle macchine.",
+      "relatedLesson": {
+        "path": "/materie/programming/lezione7.html",
+        "title": "Gestione dei File"
+      }
+    }
+  ]
+}
