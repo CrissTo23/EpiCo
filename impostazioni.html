@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EpiCo - Piattaforma Didattica</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4285f4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="EpiCo">
+    <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+    <!-- Font Awesome per le icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar/Menu laterale -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <img src="images/logo.png" alt="EpiCo Logo" class="logo">
+                <h2>EpiCo</h2>
+                <button id="closeSidebar" class="close-sidebar"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="sidebar-content">
+                <nav class="sidebar-menu">
+                    <ul>
+                        <li class="menu-item active">
+                            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                        </li>
+                        <li class="menu-item menu-dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="fas fa-code"></i> Programmazione <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="materie/programmazione/lezione1.html">Intro alla Programmazione</a></li>
+                                <li><a href="materie/programmazione/lezione2.html">Variabili e Tipi di Dati</a></li>
+                                <li><a href="materie/programmazione/lezione3.html">Controllo di Flusso</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item menu-dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="fas fa-database"></i> Database <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="materie/database/lezione1.html">Introduzione ai Database</a></li>
+                                <li><a href="materie/database/lezione2.html">SQL Base</a></li>
+                                <li><a href="materie/database/lezione3.html">Relazioni</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item menu-dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="fas fa-laptop-code"></i> Web Development <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="materie/webdev/lezione1.html">HTML Fondamenti</a></li>
+                                <li><a href="materie/webdev/lezione2.html">CSS Styling</a></li>
+                                <li><a href="materie/webdev/lezione3.html">JavaScript Base</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <a href="preferiti.html"><i class="fas fa-star"></i> Preferiti</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="recenti.html"><i class="fas fa-history"></i> Recenti</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="sidebar-footer">
+                <a href="impostazioni.html"><i class="fas fa-cog"></i> Impostazioni</a>
+            </div>
+        </aside>
+
+        <!-- Contenuto principale -->
+        <main class="main-content">
+            <header class="top-bar">
+                <button id="toggleSidebar" class="menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="search-container">
+                    <input type="text" placeholder="Cerca lezioni..." class="search-input">
+                    <button class="search-button"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="user-profile">
+                    <img src="images/profile-placeholder.jpg" alt="Profilo" class="profile-image">
+                </div>
+            </header>
+
+            <div class="content">
+                <section class="welcome-section">
+                    <h1>Benvenuto in EpiCo</h1>
+                    <p>La tua piattaforma di apprendimento personalizzata. Esplora le materie disponibili dal menu laterale.</p>
+                </section>
+
+                <section class="categories-section">
+                    <h2>Materie Disponibili</h2>
+                    <div class="category-cards">
+                        <div class="category-card">
+                            <div class="category-icon"><i class="fas fa-code"></i></div>
+                            <h3>Programmazione</h3>
+                            <p>Impara le basi e i concetti avanzati della programmazione</p>
+                            <a href="materie/programmazione/index.html" class="btn-explore">Esplora</a>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon"><i class="fas fa-database"></i></div>
+                            <h3>Database</h3>
+                            <p>Scopri come progettare e gestire database relazionali</p>
+                            <a href="materie/database/index.html" class="btn-explore">Esplora</a>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon"><i class="fas fa-laptop-code"></i></div>
+                            <h3>Web Development</h3>
+                            <p>Crea siti web moderni con HTML, CSS e JavaScript</p>
+                            <a href="materie/webdev/index.html" class="btn-explore">Esplora</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="recently-viewed">
+                    <h2>Lezioni Recenti</h2>
+                    <div class="lesson-list">
+                        <div class="lesson-item">
+                            <div class="lesson-icon"><i class="fas fa-book"></i></div>
+                            <div class="lesson-details">
+                                <h4>Introduzione alla Programmazione</h4>
+                                <p>Programmazione - Lezione 1</p>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <a href="materie/programmazione/lezione1.html" class="btn-continue">Continua</a>
+                        </div>
+                        <div class="lesson-item">
+                            <div class="lesson-icon"><i class="fas fa-book"></i></div>
+                            <div class="lesson-details">
+                                <h4>HTML Fondamenti</h4>
+                                <p>Web Development - Lezione 1</p>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 30%"></div>
+                                </div>
+                            </div>
+                            <a href="materie/webdev/lezione1.html" class="btn-continue">Continua</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
