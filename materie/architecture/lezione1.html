@@ -3,33 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lezione 1: Introduzione alla Programmazione</title>
-    <link rel="stylesheet" href="../style.css">
-    <link rel="manifest" href="../manifest.json">
+    <title>Introduzione alla Programmazione | EpiCo</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#4285f4">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="LezProg">
-    <link rel="apple-touch-icon" href="../images/icons/icon-152x152.png">
+    <meta name="apple-mobile-web-app-title" content="EpiCo">
+    <link rel="apple-touch-icon" href="/images/icon-152x152.png">
+    <!-- Font Awesome per le icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>Lezione 1: Introduzione alla Programmazione</h1>
-        <a href="../index.html" class="back-link">⬅️ Torna all'indice</a>
-    </header>
-    <main class="lezione-contenuto">
-        <!-- Qui puoi incollare il contenuto della lezione dal tuo documento Markdown -->
-        <h2>Benvenuti nel Mondo della Programmazione!</h2>
-        <h3>Perché Imparare a Programmare?</h3>
-        <h4>1. Tecnologia</h4>
-        <p>La programmazione è fondamentale oggi perché sostiene la tecnologia che utilizziamo quotidianamente, dagli smartphone al software. Programmando, puoi contribuire direttamente all'avanzamento tecnologico!</p>
-        
-        <!-- Continua con il resto del contenuto -->
-    </main>
-    <footer>
-        <button onclick="salvaProgresso('lezioni/lezione1.html')" class="btn-completa">Segna come completata</button>
-        <p>&copy; 2025 Le Mie Lezioni di Programmazione</p>
-    </footer>
-    <script src="../app.js"></script>
+    <div class="app-container">
+        <!-- Sidebar/Menu laterale - Identico all'index principale -->
+        <aside class="sidebar" id="sidebar">
+            <!-- ... inserisci lo stesso sidebar dell'index.html ... -->
+        </aside>
+
+        <!-- Contenuto principale -->
+        <main class="main-content">
+            <header class="top-bar">
+                <button id="toggleSidebar" class="menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="search-container">
+                    <input type="text" placeholder="Cerca lezioni..." class="search-input">
+                    <button class="search-button"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="user-profile">
+                    <img src="/images/profile-placeholder.png" alt="Profilo" class="profile-image">
+                </div>
+            </header>
+
+            <div class="content">
+                <div class="lesson-header">
+                    <a href="/materie/programming/index.html" class="breadcrumb">
+                        <i class="fas fa-chevron-left"></i> Principi di Programmazione
+                    </a>
+                    <h1>Introduzione alla Programmazione</h1>
+                    <div class="lesson-actions">
+                        <button class="btn-preferito" data-lezione="/materie/programming/lezione1.html">
+                            <i class="far fa-star"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="lesson-content">
+                    <!-- CONTENUTO LEZIONE -->
+                    <h2>Benvenuti nel Mondo della Programmazione!</h2>
+                    <h3>Perché Imparare a Programmare?</h3>
+                    <h4>1. Tecnologia</h4>
+                    <p>La programmazione è fondamentale oggi perché sostiene la tecnologia che utilizziamo quotidianamente, dagli smartphone al software. Programmando, puoi contribuire direttamente all'avanzamento tecnologico!</p>
+                    
+                    <!-- Continua con il resto del contenuto -->
+
+                    <div class="lesson-navigation">
+                        <span class="prev-lesson disabled">
+                            <i class="fas fa-arrow-left"></i> Lezione Precedente
+                        </span>
+                        <button class="btn-completa">Segna come completata</button>
+                        <a href="/materie/programming/lezione2.html" class="next-lesson">
+                            Lezione Successiva <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/app.js"></script>
 </body>
 </html>
