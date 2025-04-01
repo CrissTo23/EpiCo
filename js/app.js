@@ -178,35 +178,75 @@ function generateSidebar(courses) {
     setupDropdownListeners();
 }
 
-// Funzione per reimpostare i listener dei dropdown
+// Funzione per migliorare la gestione dei dropdown nel menu
 function setupDropdownListeners() {
     const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    
     dropdownToggles.forEach(toggle => {
         toggle.addEventListener('click', (e) => {
             e.preventDefault();
             const parent = toggle.parentElement;
+            const submenu = parent.querySelector('.submenu');
+            
+            // Calcola l'altezza reale del sottomenu
+            const submenuHeight = calculateSubmenuHeight(submenu);
             
             // Chiudi tutti gli altri dropdown
             dropdownToggles.forEach(otherToggle => {
                 if (otherToggle !== toggle) {
-                    otherToggle.parentElement.classList.remove('open');
+                    const otherParent = otherToggle.parentElement;
+                    otherParent.classList.remove('open');
+                    const otherSubmenu = otherParent.querySelector('.submenu');
+                    if (otherSubmenu) {
+                        otherSubmenu.style.maxHeight = '0';
+                    }
                 }
             });
             
             // Toggle del dropdown corrente
-            parent.classList.toggle('open');
-            
-            // Gestisci l'altezza max della submenu
-            const submenu = parent.querySelector('.submenu');
-            if (submenu) {
-                if (parent.classList.contains('open')) {
-                    submenu.style.maxHeight = '300px';
-                } else {
-                    submenu.style.maxHeight = '0';
-                }
+            if (parent.classList.contains('open')) {
+                parent.classList.remove('open');
+                submenu.style.maxHeight = '0';
+            } else {
+                parent.classList.add('open');
+                submenu.style.maxHeight = submenuHeight + 'px';
             }
         });
     });
+    
+    // Apri automaticamente il dropdown attivo
+    const activeDropdown = document.querySelector('.menu-item.active.menu-dropdown');
+    if (activeDropdown) {
+        const submenu = activeDropdown.querySelector('.submenu');
+        if (submenu) {
+            const submenuHeight = calculateSubmenuHeight(submenu);
+            activeDropdown.classList.add('open');
+            submenu.style.maxHeight = submenuHeight + 'px';
+        }
+    }
+}
+
+// Funzione per calcolare l'altezza effettiva del sottomenu
+function calculateSubmenuHeight(submenu) {
+    if (!submenu) return 0;
+    
+    // Clona il sottomenu per misurarne l'altezza reale
+    const clone = submenu.cloneNode(true);
+    
+    // Nascondi il clone ma permettigli di espandersi completamente per la misurazione
+    clone.style.maxHeight = 'none';
+    clone.style.opacity = '0';
+    clone.style.position = 'absolute';
+    clone.style.visibility = 'hidden';
+    
+    // Aggiungi il clone al DOM per misurarlo
+    document.body.appendChild(clone);
+    const height = clone.scrollHeight;
+    
+    // Rimuovi il clone
+    document.body.removeChild(clone);
+    
+    return height;
 }
 
 // Funzione per generare le card dei corsi nella homepage
@@ -279,13 +319,24 @@ function aggiornaInterfacciaProgresso() {
     });
 }
 
-// Registra quando una lezione è stata visualizzata e avanza il progresso man mano che l'utente scorre
+// Integrazione di app.js con content-loader.js
+// Aggiungere questo codice alla fine di app.js dopo aver caricato content-loader.js
+
+// Modifica funzione per visualizzare la lezione in base al nuovo sistema
 function registraVisualizzazioneLezione() {
     // Ottieni l'URL corrente
     const currentPath = window.location.pathname;
     
     // Se siamo in una pagina di lezione
     if (currentPath.includes('/lezione')) {
+        // Estrai informazioni corso e lezione
+        const pathMatch = currentPath.match(/\/materie\/([^\/]+)\/lezione(\d+)\.html/);
+        if (!pathMatch) return;
+        
+        const courseId = pathMatch[1];
+        const lessonNumber = pathMatch[2];
+        const lessonId = `lezione${lessonNumber}`;
+        
         // Verifica se è una nuova visualizzazione o è già in progresso
         const progresso = ottieniProgresso(currentPath);
         
@@ -313,32 +364,152 @@ function registraVisualizzazioneLezione() {
                 }
             });
         }
+        
+        // Carica i dati dal nuovo sistema
+        loadLessonBundle(courseId, lessonId).then(data => {
+            console.log('Dati della lezione caricati dal nuovo sistema', data);
+            // Qui puoi aggiungere logica per utilizzare i dati caricati
+        });
     }
 }
 
-// Gestione delle lezioni recenti
-function aggiungiARecenti(lezioneId) {
-    const lezioniRecenti = JSON.parse(localStorage.getItem('lezioniRecenti')) || [];
+// Funzione per generare il menu della sidebar con il nuovo sistema
+async function generateDynamicSidebar() {
+    const sidebarMenu = document.querySelector('.sidebar-menu ul');
+    if (!sidebarMenu) return;
     
-    // Rimuovi se già presente
-    const index = lezioniRecenti.indexOf(lezioneId);
-    if (index > -1) {
-        lezioniRecenti.splice(index, 1);
-    }
+    // Ottieni i dati dei corsi
+    const courses = await loadCoursesData();
+    if (!courses || courses.length === 0) return;
     
-    // Aggiungi all'inizio
-    lezioniRecenti.unshift(lezioneId);
+    // Ottieni info sulla pagina corrente
+    const pageInfo = extractPageInfo();
     
-    // Mantieni solo le ultime 5
-    if (lezioniRecenti.length > 5) {
-        lezioniRecenti.pop();
-    }
+    // Svuota il menu corrente mantenendo la home
+    const homeItem = sidebarMenu.querySelector('.menu-item:first-child');
+    sidebarMenu.innerHTML = '';
+    if (homeItem) sidebarMenu.appendChild(homeItem);
     
-    localStorage.setItem('lezioniRecenti', JSON.stringify(lezioniRecenti));
+    // Aggiungi i corsi dinamicamente
+    courses.forEach(course => {
+        const isActive = pageInfo && pageInfo.courseId === course.id;
+        const isOpen = isActive || false; // Apri il dropdown se siamo in una pagina del corso
+        
+        const li = document.createElement('li');
+        li.className = `menu-item menu-dropdown ${isActive ? 'active' : ''} ${isOpen ? 'open' : ''}`;
+        
+        const a = document.createElement('a');
+        a.href = "#";
+        a.className = "dropdown-toggle";
+        a.innerHTML = `<i class="${course.icon}"></i> ${course.title} <i class="fas fa-chevron-down"></i>`;
+        
+        const submenu = document.createElement('ul');
+        submenu.className = "submenu";
+        
+        // Aggiungi link al corso
+        const overviewLi = document.createElement('li');
+        overviewLi.innerHTML = `<a href="/materie/${course.id}/index.html">Panoramica</a>`;
+        submenu.appendChild(overviewLi);
+        
+        // Aggiungi lezioni
+        course.lessons.forEach(lesson => {
+            const lessonLi = document.createElement('li');
+            const isCurrentPage = pageInfo && pageInfo.lessonId === lesson.id && pageInfo.courseId === course.id;
+            if (isCurrentPage) lessonLi.className = 'active';
+            lessonLi.innerHTML = `<a href="${lesson.path}">${lesson.title}</a>`;
+            submenu.appendChild(lessonLi);
+        });
+        
+        // Aggiungi link al glossario
+        const glossaryLi = document.createElement('li');
+        const isGlossaryPage = pageInfo && pageInfo.isGlossary && pageInfo.courseId === course.id;
+        glossaryLi.className = isGlossaryPage ? 'active' : '';
+        glossaryLi.innerHTML = `<a href="/materie/${course.id}/glossario.html"><i class="fas fa-book"></i> Glossario</a>`;
+        submenu.appendChild(glossaryLi);
+        
+        // Aggiungi link agli esercizi
+        const exercisesLi = document.createElement('li');
+        const isExercisesPage = pageInfo && pageInfo.isExercises && pageInfo.courseId === course.id;
+        exercisesLi.className = isExercisesPage ? 'active' : '';
+        exercisesLi.innerHTML = `<a href="/materie/${course.id}/esercizi.html"><i class="fas fa-laptop-code"></i> Esercizi Interattivi</a>`;
+        submenu.appendChild(exercisesLi);
+        
+        li.appendChild(a);
+        li.appendChild(submenu);
+        sidebarMenu.appendChild(li);
+    });
+    
+    // Aggiungi gli elementi fissi (preferiti, recenti, ecc.)
+    const favoritesLi = document.createElement('li');
+    favoritesLi.className = 'menu-item';
+    const isFavoritesPage = window.location.pathname.includes('/preferiti.html');
+    if (isFavoritesPage) favoritesLi.classList.add('active');
+    favoritesLi.innerHTML = `<a href="/preferiti.html"><i class="fas fa-star"></i> Preferiti</a>`;
+    sidebarMenu.appendChild(favoritesLi);
+    
+    const recentLi = document.createElement('li');
+    recentLi.className = 'menu-item';
+    const isRecentPage = window.location.pathname.includes('/recenti.html');
+    if (isRecentPage) recentLi.classList.add('active');
+    recentLi.innerHTML = `<a href="/recenti.html"><i class="fas fa-history"></i> Recenti</a>`;
+    sidebarMenu.appendChild(recentLi);
+    
+    // Configura i dropdown dopo averli aggiunti al DOM
+    setupDropdownListeners();
 }
 
-// Carica le lezioni recenti nella pagina recenti.html
-async function caricaLezioniRecenti() {
+// Funzione per caricare i dati di un corso specifico nella dashboard
+async function loadCourseDataInDashboard(courseId) {
+    // Carica i dati del corso
+    const course = await loadCourseData(courseId);
+    if (!course) return;
+    
+    // Aggiorna i contenuti nella dashboard
+    const courseTitle = document.querySelector('.welcome-section h1');
+    if (courseTitle) courseTitle.textContent = course.title;
+    
+    const courseDescription = document.querySelector('.welcome-section p');
+    if (courseDescription) courseDescription.textContent = course.description;
+    
+    // Carica le lezioni del corso
+    const lessonsContainer = document.getElementById('course-lessons-container');
+    if (lessonsContainer) {
+        let html = '';
+        
+        course.lessons.forEach((lesson, index) => {
+            const lessonNumber = index + 1;
+            const formattedNumber = lessonNumber < 10 ? `0${lessonNumber}` : lessonNumber;
+            
+            html += `
+            <div class="lesson-card">
+                <div class="lesson-number">${formattedNumber}</div>
+                <div class="lesson-info">
+                    <h3>${lesson.title}</h3>
+                    <p>${lesson.description}</p>
+                    <div class="lesson-meta">
+                        <span class="lesson-duration"><i class="far fa-clock"></i> ${lesson.duration}</span>
+                        <span class="lesson-difficulty"><i class="fas fa-signal"></i> ${lesson.difficulty}</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 0%"></div>
+                    </div>
+                </div>
+                <a href="${lesson.path}" class="lesson-link">
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            `;
+        });
+        
+        lessonsContainer.innerHTML = html;
+        
+        // Aggiorna il progresso per ogni lezione
+        aggiornaInterfacciaProgresso();
+    }
+}
+
+// Funzione per caricare le lezioni recenti con il nuovo sistema
+async function loadRecentLessonsEnhanced() {
     const recentList = document.getElementById('recent-lessons-list');
     if (!recentList) return;
     
@@ -348,84 +519,61 @@ async function caricaLezioniRecenti() {
         return;
     }
     
-    // Carica i dati dei corsi se non sono ancora stati caricati
-    if (corsiData.length === 0) {
-        corsiData = await loadCoursesData();
-    }
+    // Carica i dati di tutti i corsi
+    const courses = await loadCoursesData();
     
     let html = '';
-    lezioniRecenti.forEach(lezione => {
-        // Cerca nei dati dei corsi per trovare i metadati della lezione
-        let lessonData = null;
-        let courseData = null;
-        
+    const promises = lezioniRecenti.map(async (lezione) => {
         // Estrai course e lesson id dall'URL della lezione
         const match = lezione.match(/\/materie\/([^\/]+)\/lezione(\d+)\.html/);
-        if (match) {
-            const courseId = match[1];
-            const lessonNumber = parseInt(match[2]);
-            
-            // Trova il corso
-            courseData = corsiData.find(c => c.id === courseId);
-            if (courseData) {
-                // Trova la lezione
-                lessonData = courseData.lessons.find(l => l.id === `lezione${lessonNumber}`);
-            }
-        }
+        if (!match) return null;
         
-        // Usa dati predefiniti se non trovati
-        const data = {
-            title: lessonData ? lessonData.title : 'Lezione',
-            course: courseData ? courseData.title : 'Corso',
-            icon: courseData ? courseData.icon : 'fa-book'
-        };
+        const courseId = match[1];
+        const lessonNumber = parseInt(match[2]);
+        const lessonId = `lezione${lessonNumber}`;
         
-        const progresso = ottieniProgresso(lezione);
-        const dataAccesso = progresso.ultimoAccesso ? new Date(progresso.ultimoAccesso).toLocaleDateString() : 'N/D';
+        // Trova i dati del corso
+        const course = courses.find(c => c.id === courseId);
+        if (!course) return null;
         
-        html += `
+        // Trova i dati della lezione
+        const lesson = course.lessons.find(l => l.id === lessonId);
+        if (!lesson) return null;
+        
+        // Ottieni info sul progresso
+        const progresso = JSON.parse(localStorage.getItem('progressoLezioni')) || {};
+        const lessonProgress = progresso[lezione] || { percentuale: 0, ultimoAccesso: null };
+        const dataAccesso = lessonProgress.ultimoAccesso 
+            ? new Date(lessonProgress.ultimoAccesso).toLocaleDateString() 
+            : 'N/D';
+        
+        return `
         <div class="lesson-item">
-            <div class="lesson-icon"><i class="${data.icon}"></i></div>
+            <div class="lesson-icon"><i class="${course.icon}"></i></div>
             <div class="lesson-details">
-                <h4>${data.title}</h4>
-                <p>${data.course} - Ultimo accesso: ${dataAccesso}</p>
+                <h4>${lesson.title}</h4>
+                <p>${course.title} - Ultimo accesso: ${dataAccesso}</p>
                 <div class="progress-bar">
-                    <div class="progress" style="width: ${progresso.percentuale}%"></div>
+                    <div class="progress" style="width: ${lessonProgress.percentuale}%"></div>
                 </div>
             </div>
             <a href="${lezione}" class="btn-continue">Continua</a>
         </div>`;
     });
     
-    recentList.innerHTML = html;
-}
-
-// Gestione dei preferiti
-function togglePreferito(lezioneId) {
-    const preferiti = JSON.parse(localStorage.getItem('lezioniPreferite')) || [];
+    // Attendi che tutte le promesse siano risolte
+    const results = await Promise.all(promises);
+    html = results.filter(Boolean).join('');
     
-    const index = preferiti.indexOf(lezioneId);
-    if (index > -1) {
-        // Rimuovi dai preferiti
-        preferiti.splice(index, 1);
-        localStorage.setItem('lezioniPreferite', JSON.stringify(preferiti));
-        return false;
+    if (html) {
+        recentList.innerHTML = html;
     } else {
-        // Aggiungi ai preferiti
-        preferiti.push(lezioneId);
-        localStorage.setItem('lezioniPreferite', JSON.stringify(preferiti));
-        return true;
+        recentList.innerHTML = '<div class="empty-state">Nessuna lezione recente disponibile.</div>';
     }
 }
 
-// Funzione per verificare se una lezione è preferita
-function isPreferita(lezioneId) {
-    const preferiti = JSON.parse(localStorage.getItem('lezioniPreferite')) || [];
-    return preferiti.includes(lezioneId);
-}
-
-// Carica lezioni preferite nella pagina preferiti.html
-async function caricaLezioniPreferite() {
+// Modifica caricaLezioniPreferite per usare il nuovo sistema
+async function caricaLezioniPreferiteEnhanced() {
     const preferitiList = document.getElementById('favorites-list');
     if (!preferitiList) return;
     
@@ -435,293 +583,172 @@ async function caricaLezioniPreferite() {
         return;
     }
     
-    // Carica i dati dei corsi se non sono ancora stati caricati
-    if (corsiData.length === 0) {
-        corsiData = await loadCoursesData();
-    }
+    // Carica i dati di tutti i corsi
+    const courses = await loadCoursesData();
     
     let html = '';
-    preferiti.forEach(lezione => {
-        // Cerca nei dati dei corsi per trovare i metadati della lezione
-        let lessonData = null;
-        let courseData = null;
-        
+    const promises = preferiti.map(async (lezione) => {
         // Estrai course e lesson id dall'URL della lezione
         const match = lezione.match(/\/materie\/([^\/]+)\/lezione(\d+)\.html/);
-        if (match) {
-            const courseId = match[1];
-            const lessonNumber = parseInt(match[2]);
-            
-            // Trova il corso
-            courseData = corsiData.find(c => c.id === courseId);
-            if (courseData) {
-                // Trova la lezione
-                lessonData = courseData.lessons.find(l => l.id === `lezione${lessonNumber}`);
-            }
-        }
+        if (!match) return null;
         
-        // Usa dati predefiniti se non trovati
-        const data = {
-            title: lessonData ? lessonData.title : 'Lezione',
-            course: courseData ? courseData.title : 'Corso',
-            icon: courseData ? courseData.icon : 'fa-book'
-        };
+        const courseId = match[1];
+        const lessonNumber = parseInt(match[2]);
+        const lessonId = `lezione${lessonNumber}`;
         
-        const progresso = ottieniProgresso(lezione);
-        const dataAccesso = progresso.ultimoAccesso ? new Date(progresso.ultimoAccesso).toLocaleDateString() : 'N/D';
+        // Trova i dati del corso
+        const course = courses.find(c => c.id === courseId);
+        if (!course) return null;
         
-        html += `
+        // Trova i dati della lezione
+        const lesson = course.lessons.find(l => l.id === lessonId);
+        if (!lesson) return null;
+        
+        // Ottieni info sul progresso
+        const progresso = JSON.parse(localStorage.getItem('progressoLezioni')) || {};
+        const lessonProgress = progresso[lezione] || { percentuale: 0, ultimoAccesso: null };
+        const dataAccesso = lessonProgress.ultimoAccesso 
+            ? new Date(lessonProgress.ultimoAccesso).toLocaleDateString() 
+            : 'N/D';
+        
+        return `
         <div class="lesson-item">
-            <div class="lesson-icon"><i class="${data.icon}"></i></div>
+            <div class="lesson-icon"><i class="${course.icon}"></i></div>
             <div class="lesson-details">
-                <h4>${data.title}</h4>
-                <p>${data.course} - Ultimo accesso: ${dataAccesso}</p>
+                <h4>${lesson.title}</h4>
+                <p>${course.title} - Ultimo accesso: ${dataAccesso}</p>
                 <div class="progress-bar">
-                    <div class="progress" style="width: ${progresso.percentuale}%"></div>
+                    <div class="progress" style="width: ${lessonProgress.percentuale}%"></div>
                 </div>
             </div>
             <a href="${lezione}" class="btn-continue">Continua</a>
         </div>`;
     });
     
-    preferitiList.innerHTML = html;
-}
-
-// Gestione delle impostazioni
-function salvaImpostazioni() {
-    const darkMode = document.getElementById('dark-mode').checked;
-    const fontSize = document.getElementById('font-size').value;
-    const notificationsEnabled = document.getElementById('notifications').checked;
+    // Attendi che tutte le promesse siano risolte
+    const results = await Promise.all(promises);
+    html = results.filter(Boolean).join('');
     
-    const impostazioni = {
-        darkMode,
-        fontSize,
-        notificationsEnabled,
-        ultimoAggiornamento: new Date().toISOString()
-    };
-    
-    localStorage.setItem('impostazioni', JSON.stringify(impostazioni));
-    applicaImpostazioni(impostazioni);
-    
-    // Mostra feedback
-    const feedbackMsg = document.getElementById('settings-feedback');
-    if (feedbackMsg) {
-        feedbackMsg.classList.add('show');
-        setTimeout(() => {
-            feedbackMsg.classList.remove('show');
-        }, 3000);
-    }
-}
-
-function caricaImpostazioni() {
-    const impostazioni = JSON.parse(localStorage.getItem('impostazioni')) || {
-        darkMode: false,
-        fontSize: 'medium',
-        notificationsEnabled: true
-    };
-    
-    // Imposta i valori dei controlli form
-    const darkModeToggle = document.getElementById('dark-mode');
-    const fontSizeSelect = document.getElementById('font-size');
-    const notificationsToggle = document.getElementById('notifications');
-    
-    if (darkModeToggle) darkModeToggle.checked = impostazioni.darkMode;
-    if (fontSizeSelect) fontSizeSelect.value = impostazioni.fontSize;
-    if (notificationsToggle) notificationsToggle.checked = impostazioni.notificationsEnabled;
-    
-    applicaImpostazioni(impostazioni);
-}
-
-function applicaImpostazioni(impostazioni) {
-    // Applica darkMode
-    if (impostazioni.darkMode) {
-        document.body.classList.add('dark-mode');
+    if (html) {
+        preferitiList.innerHTML = html;
     } else {
-        document.body.classList.remove('dark-mode');
-    }
-    
-    // Applica fontSize
-    document.documentElement.setAttribute('data-font-size', impostazioni.fontSize);
-}
-
-// Gestione del glossario
-function caricaGlossario() {
-    const glossarioContainer = document.getElementById('glossary-container');
-    if (!glossarioContainer) return;
-    
-    // Ottieni l'ID del corso dall'URL
-    const match = window.location.pathname.match(/\/materie\/([^\/]+)\/glossario\.html/);
-    if (!match) return;
-    
-    const courseId = match[1];
-    
-    // Carica il glossario per questo corso
-    fetch(`/data/glossary/${courseId}_glossary.json`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Glossario non disponibile');
-            }
-            return response.json();
-        })
-        .then(data => {
-            renderGlossario(data, glossarioContainer);
-        })
-        .catch(error => {
-            console.error('Errore nel caricamento del glossario:', error);
-            glossarioContainer.innerHTML = '<div class="error-message">Il glossario per questo corso non è ancora disponibile.</div>';
-        });
-}
-
-function renderGlossario(data, container) {
-    if (!data || !data.terms || data.terms.length === 0) {
-        container.innerHTML = '<div class="empty-state">Nessun termine nel glossario.</div>';
-        return;
-    }
-    
-    // Organizza i termini per lettera iniziale
-    const termsByLetter = {};
-    
-    data.terms.forEach(term => {
-        const firstLetter = term.term.charAt(0).toUpperCase();
-        if (!termsByLetter[firstLetter]) {
-            termsByLetter[firstLetter] = [];
-        }
-        termsByLetter[firstLetter].push(term);
-    });
-    
-    // Crea indice alfabetico
-    let html = '<div class="alphabet-index">';
-    
-    for (let i = 65; i <= 90; i++) {
-        const letter = String.fromCharCode(i);
-        if (termsByLetter[letter]) {
-            html += `<a href="#letter-${letter}" class="letter-link">${letter}</a>`;
-        } else {
-            html += `<span class="letter-disabled">${letter}</span>`;
-        }
-    }
-    
-    html += '</div>';
-    
-    // Aggiungi ricerca
-    html += `
-    <div class="glossary-search">
-        <input type="text" id="glossary-search-input" placeholder="Cerca nel glossario...">
-        <button id="glossary-search-btn"><i class="fas fa-search"></i></button>
-    </div>`;
-    
-    // Aggiungi i termini organizzati per lettera
-    html += '<div class="glossary-terms">';
-    
-    Object.keys(termsByLetter).sort().forEach(letter => {
-        html += `<div class="letter-section" id="letter-${letter}">
-            <h2 class="letter-heading">${letter}</h2>
-            <div class="terms-list">`;
-        
-        termsByLetter[letter].forEach(term => {
-            html += `
-            <div class="glossary-term">
-                <h3 class="term-title">${term.term}</h3>
-                <div class="term-definition">${term.definition}</div>
-                ${term.relatedLesson ? `<div class="term-related">Lezione correlata: <a href="${term.relatedLesson.path}">${term.relatedLesson.title}</a></div>` : ''}
-            </div>`;
-        });
-        
-        html += '</div></div>';
-    });
-    
-    html += '</div>';
-    
-    container.innerHTML = html;
-    
-    // Aggiungi funzionalità di ricerca
-    setTimeout(() => {
-        const searchInput = document.getElementById('glossary-search-input');
-        const searchBtn = document.getElementById('glossary-search-btn');
-        
-        if (searchInput && searchBtn) {
-            searchBtn.addEventListener('click', () => {
-                searchGlossary(searchInput.value);
-            });
-            
-            searchInput.addEventListener('keyup', (e) => {
-                if (e.key === 'Enter') {
-                    searchGlossary(searchInput.value);
-                }
-            });
-        }
-    }, 100);
-}
-
-function searchGlossary(query) {
-    if (!query || query.trim() === '') {
-        // Resetta la ricerca - mostra tutti i termini
-        document.querySelectorAll('.glossary-term').forEach(term => {
-            term.style.display = 'block';
-        });
-        document.querySelectorAll('.letter-section').forEach(section => {
-            section.style.display = 'block';
-        });
-        return;
-    }
-    
-    query = query.toLowerCase();
-    let foundAny = false;
-    
-    // Nascondi tutte le sezioni
-    document.querySelectorAll('.letter-section').forEach(section => {
-        section.style.display = 'none';
-    });
-    
-    // Filtra i termini
-    document.querySelectorAll('.glossary-term').forEach(term => {
-        const title = term.querySelector('.term-title').textContent.toLowerCase();
-        const definition = term.querySelector('.term-definition').textContent.toLowerCase();
-        
-        if (title.includes(query) || definition.includes(query)) {
-            term.style.display = 'block';
-            term.closest('.letter-section').style.display = 'block';
-            foundAny = true;
-        } else {
-            term.style.display = 'none';
-        }
-    });
-    
-    if (!foundAny) {
-        // Mostra messaggio "nessun risultato"
-        const searchResultMsg = document.getElementById('search-results-message');
-        if (searchResultMsg) {
-            searchResultMsg.textContent = `Nessun risultato per "${query}"`;
-            searchResultMsg.style.display = 'block';
-        } else {
-            const msg = document.createElement('div');
-            msg.id = 'search-results-message';
-            msg.className = 'empty-state';
-            msg.textContent = `Nessun risultato per "${query}"`;
-            document.querySelector('.glossary-terms').prepend(msg);
-        }
-    } else {
-        // Nascondi messaggio "nessun risultato" se esiste
-        const searchResultMsg = document.getElementById('search-results-message');
-        if (searchResultMsg) {
-            searchResultMsg.style.display = 'none';
-        }
+        preferitiList.innerHTML = '<div class="empty-state">Nessuna lezione preferita disponibile.</div>';
     }
 }
 
-// Inizializza l'interfaccia al caricamento della pagina
-document.addEventListener('DOMContentLoaded', async () => {
+// Aggiorna il calcolo delle statistiche di progresso
+async function updateProgressStats() {
+    const progressoLezioni = JSON.parse(localStorage.getItem('progressoLezioni')) || {};
+    const completedExercises = JSON.parse(localStorage.getItem('completedExercises')) || {};
+    
+    // Carica i dati di tutti i corsi per avere il conteggio totale delle lezioni
+    const courses = await loadCoursesData();
+    let totalLessons = 0;
+    
+    courses.forEach(course => {
+        totalLessons += course.lessons.length;
+    });
+    
+    // Calcola quante lezioni sono state completate
+    let completedLessonsCount = 0;
+    for (const lezione in progressoLezioni) {
+        if (progressoLezioni[lezione].percentuale === 100) {
+            completedLessonsCount++;
+        }
+    }
+    
+    // Calcola quanti esercizi sono stati completati
+    let exercisesCompleted = 0;
+    for (const exerciseSet in completedExercises) {
+        exercisesCompleted += completedExercises[exerciseSet].length;
+    }
+    
+    // Calcola la percentuale totale di completamento
+    const completionPercentage = totalLessons > 0 ? Math.round((completedLessonsCount / totalLessons) * 100) : 0;
+    
+    // Aggiorna la visualizzazione
+    const completedElement = document.getElementById('lessons-completed');
+    if (completedElement) completedElement.textContent = completedLessonsCount;
+    
+    const exercisesElement = document.getElementById('exercises-completed');
+    if (exercisesElement) exercisesElement.textContent = exercisesCompleted;
+    
+    const percentageElement = document.getElementById('completed-percentage');
+    if (percentageElement) percentageElement.textContent = completionPercentage + '%';
+    
+    // Aggiorna il cerchio di progresso
+    const progressCircle = document.getElementById('progress-completed');
+    if (progressCircle) {
+        progressCircle.setAttribute('stroke-dasharray', `${completionPercentage}, 100`);
+    }
+    
+    // Calcola il tempo di studio approssimativo (10 minuti per lezione visualizzata)
+    const timeSpent = Math.round(Object.keys(progressoLezioni).length * 0.5 * 10) / 10; // in ore
+    const timeElement = document.getElementById('time-spent');
+    if (timeElement) timeElement.textContent = timeSpent + 'h';
+}
+
+// Funzione per inizializzare la dashboard con il nuovo sistema
+async function initDashboard() {
+    // Genera la sidebar dinamica
+    await generateDynamicSidebar();
+    
+    // Carica i corsi nella dashboard principale
+    await generateCourseCards();
+    
+    // Carica le lezioni recenti
+    await loadRecentLessonsEnhanced();
+    
+    // Aggiorna le statistiche
+    await updateProgressStats();
+}
+
+// Funzione per generare le card dei corsi nella homepage
+async function generateCourseCards() {
+    const categoryCardsContainer = document.querySelector('.category-cards');
+    if (!categoryCardsContainer) return;
+    
     // Carica i dati dei corsi
     const courses = await loadCoursesData();
+    if (!courses || courses.length === 0) return;
     
-    // Genera sidebar
-    generateSidebar(courses);
+    // Genera le card dei corsi
+    let html = '';
+    courses.forEach(course => {
+        html += `
+        <div class="category-card">
+            <div class="category-icon"><i class="${course.icon}"></i></div>
+            <h3>${course.title}</h3>
+            <p>${course.description}</p>
+            <a href="/materie/${course.id}/index.html" class="btn-explore">Esplora</a>
+        </div>
+        `;
+    });
     
-    // Genera cards dei corsi nella homepage
-    generateCourseCards(courses);
-    
-    // Carica le impostazioni
+    categoryCardsContainer.innerHTML = html;
+}
+
+// Codice di inizializzazione alternativo
+document.addEventListener('DOMContentLoaded', async () => {
+    // Prima carichiamo le impostazioni
     caricaImpostazioni();
+    
+    // Determina la pagina corrente
+    const pageInfo = extractPageInfo();
+    
+    // Inizializza la dashboard se siamo nella home
+    if (!pageInfo && window.location.pathname === '/' || window.location.pathname === '/index.html') {
+        await initDashboard();
+    } 
+    // Inizializza la pagina del corso se siamo in una pagina del corso
+    else if (pageInfo && pageInfo.courseId && !pageInfo.lessonId && !pageInfo.isGlossary && !pageInfo.isExercises) {
+        await loadCourseDataInDashboard(pageInfo.courseId);
+        await generateDynamicSidebar();
+    }
+    // Altrimenti, genera solo la sidebar dinamica
+    else {
+        await generateDynamicSidebar();
+    }
     
     // Aggiorna l'interfaccia del progresso
     aggiornaInterfacciaProgresso();
@@ -770,17 +797,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     // Carica lezioni recenti se siamo nella pagina relativa
     if (window.location.pathname.includes('/recenti.html')) {
-        caricaLezioniRecenti();
+        await loadRecentLessonsEnhanced();
     }
     
     // Carica preferiti se siamo nella pagina relativa
     if (window.location.pathname.includes('/preferiti.html')) {
-        caricaLezioniPreferite();
-    }
-    
-    // Carica glossario se siamo nella pagina relativa
-    if (window.location.pathname.includes('/glossario.html')) {
-        caricaGlossario();
+        await caricaLezioniPreferiteEnhanced();
     }
     
     // Gestione form impostazioni

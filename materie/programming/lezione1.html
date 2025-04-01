@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Principi di Programmazione | EpiCo</title>
+    <title>Introduzione alla Programmazione | EpiCo</title>
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/course.css">
+    <link rel="stylesheet" href="/css/editor.css">
+    <link rel="stylesheet" href="/css/lesson-components.css">
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#4285f4">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -19,108 +20,7 @@
     <div class="app-container">
         <!-- Sidebar/Menu laterale -->
         <aside class="sidebar" id="sidebar">
-            <div class="sidebar-header">
-                <img src="/images/logo.png" alt="EpiCo Logo" class="logo">
-                <h2>EpiCo</h2>
-                <button id="closeSidebar" class="close-sidebar"><i class="fas fa-times"></i></button>
-            </div>
-            
-            <div class="sidebar-content">
-                <nav class="sidebar-menu">
-                    <ul>
-                        <li class="menu-item">
-                            <a href="/index.html"><i class="fas fa-home"></i> Home</a>
-                        </li>
-                        
-                        <!-- Programmazione -->
-                        <li class="menu-item menu-dropdown open active">
-                            <a href="#" class="dropdown-toggle">
-                                <i class="fas fa-code"></i> Principi di Programmazione <i class="fas fa-chevron-down"></i>
-                            </a>
-                            <ul class="submenu" style="max-height: 300px;">
-                                <li class="active"><a href="/materie/programming/index.html">Panoramica</a></li>
-                                <li><a href="/materie/programming/lezione1.html">Introduzione alla Programmazione</a></li>
-                                <li><a href="/materie/programming/lezione2.html">Variabili e Tipi di Dati</a></li>
-                                <li><a href="/materie/programming/lezione3.html">Controllo di Flusso</a></li>
-                                <li><a href="/materie/programming/lezione4.html">Funzioni</a></li>
-                                <li><a href="/materie/programming/lezione5.html">Strutture Dati</a></li>
-                                <li><a href="/materie/programming/lezione6.html">Programmazione Orientata agli Oggetti</a></li>
-                                <li><a href="/materie/programming/lezione7.html">Gestione dei File</a></li>
-                                <li><a href="/materie/programming/lezione8.html">Gestione degli Errori</a></li>
-                                <li><a href="/materie/programming/lezione9.html">Algoritmi Fondamentali</a></li>
-                                <li><a href="/materie/programming/lezione10.html">Programmazione Funzionale</a></li>
-                                <li><a href="/materie/programming/glossario.html"><i class="fas fa-book"></i> Glossario</a></li>
-                                <li><a href="/materie/programming/esercizi.html"><i class="fas fa-laptop-code"></i> Esercizi Interattivi</a></li>
-                            </ul>
-                        </li>
-                        
-                        <!-- Web Development -->
-                        <li class="menu-item menu-dropdown">
-                            <a href="#" class="dropdown-toggle">
-                                <i class="fas fa-laptop-code"></i> Web Development <i class="fas fa-chevron-down"></i>
-                            </a>
-                            <ul class="submenu">
-                                <li><a href="/materie/webdev/index.html">Panoramica</a></li>
-                                <li><a href="/materie/webdev/lezione1.html">HTML Fondamenti</a></li>
-                                <li><a href="/materie/webdev/lezione2.html">CSS Styling</a></li>
-                                <li><a href="/materie/webdev/lezione3.html">JavaScript Base</a></li>
-                                <li><a href="/materie/webdev/glossario.html"><i class="fas fa-book"></i> Glossario</a></li>
-                                <li><a href="/materie/webdev/esercizi.html"><i class="fas fa-laptop-code"></i> Esercizi Interattivi</a></li>
-                            </ul>
-                        </li>
-                        
-                        <!-- Architettura dei Calcolatori -->
-                        <li class="menu-item menu-dropdown">
-                            <a href="#" class="dropdown-toggle">
-                                <i class="fas fa-microchip"></i> Architettura dei Calcolatori <i class="fas fa-chevron-down"></i>
-                            </a>
-                            <ul class="submenu">
-                                <li><a href="/materie/architecture/index.html">Panoramica</a></li>
-                                <li><a href="/materie/architecture/lezione1.html">Introduzione all'Architettura</a></li>
-                                <li><a href="/materie/architecture/glossario.html"><i class="fas fa-book"></i> Glossario</a></li>
-                                <li><a href="/materie/architecture/esercizi.html"><i class="fas fa-laptop-code"></i> Esercizi Interattivi</a></li>
-                            </ul>
-                        </li>
-                        
-                        <!-- Reti di Calcolatori -->
-                        <li class="menu-item menu-dropdown">
-                            <a href="#" class="dropdown-toggle">
-                                <i class="fas fa-network-wired"></i> Reti di Calcolatori <i class="fas fa-chevron-down"></i>
-                            </a>
-                            <ul class="submenu">
-                                <li><a href="/materie/networks/index.html">Panoramica</a></li>
-                                <li><a href="/materie/networks/lezione1.html">Introduzione alle Reti</a></li>
-                                <li><a href="/materie/networks/glossario.html"><i class="fas fa-book"></i> Glossario</a></li>
-                                <li><a href="/materie/networks/esercizi.html"><i class="fas fa-laptop-code"></i> Esercizi Interattivi</a></li>
-                            </ul>
-                        </li>
-                        
-                        <!-- Matematica Discreta -->
-                        <li class="menu-item menu-dropdown">
-                            <a href="#" class="dropdown-toggle">
-                                <i class="fas fa-calculator"></i> Matematica Discreta <i class="fas fa-chevron-down"></i>
-                            </a>
-                            <ul class="submenu">
-                                <li><a href="/materie/mathematics/index.html">Panoramica</a></li>
-                                <li><a href="/materie/mathematics/lezione1.html">Insiemi e Logica</a></li>
-                                <li><a href="/materie/mathematics/glossario.html"><i class="fas fa-book"></i> Glossario</a></li>
-                                <li><a href="/materie/mathematics/esercizi.html"><i class="fas fa-laptop-code"></i> Esercizi Interattivi</a></li>
-                            </ul>
-                        </li>
-                        
-                        <li class="menu-item">
-                            <a href="/preferiti.html"><i class="fas fa-star"></i> Preferiti</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="/recenti.html"><i class="fas fa-history"></i> Recenti</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            
-            <div class="sidebar-footer">
-                <a href="/impostazioni.html"><i class="fas fa-cog"></i> Impostazioni</a>
-            </div>
+            <!-- La sidebar verrà caricata dinamicamente da app.js -->
         </aside>
 
         <!-- Contenuto principale -->
@@ -139,828 +39,182 @@
             </header>
 
             <div class="content">
-                <section class="welcome-section">
-                    <h1>Principi di Programmazione</h1>
-                    <p>Benvenuto al corso di Principi di Programmazione. Questo corso è pensato per introdurti al mondo della programmazione, fornendoti le basi necessarie per iniziare a creare programmi e sviluppare il pensiero computazionale.</p>
-                </section>
-
-                <!-- Panoramica del corso -->
-                <section class="course-overview">
-                    <div class="course-header">
-                        <div class="course-icon"><i class="fas fa-code"></i></div>
-                        <div class="course-stats">
-                            <div class="stat-item">
-                                <span class="stat-value">10</span>
-                                <span class="stat-label">Lezioni</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-value">30+</span>
-                                <span class="stat-label">Esercizi</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-value">25+</span>
-                                <span class="stat-label">Termini Glossario</span>
-                            </div>
-                        </div>
+                <div class="lesson-header">
+                    <a href="/materie/programming/index.html" class="breadcrumb">
+                        <i class="fas fa-chevron-left"></i> Principi di Programmazione
+                    </a>
+                    <h1>Introduzione alla Programmazione</h1>
+                    <div class="lesson-actions">
+                        <button class="btn-preferito" data-lezione="/materie/programming/lezione1.html">
+                            <i class="far fa-star"></i>
+                        </button>
                     </div>
-                    <div class="course-description">
-                        <p>Questo corso ti guiderà attraverso i concetti fondamentali della programmazione, dai tipi di dati e variabili fino alla programmazione orientata agli oggetti. Ogni lezione è accompagnata da esercizi pratici e un glossario dedicato per aiutarti a padroneggiare i concetti.</p>
+                </div>
+
+                <!-- Tab di navigazione -->
+                <div class="lesson-tabs">
+                    <button class="tab-btn active" data-tab="content">Contenuto</button>
+                    <button class="tab-btn" data-tab="glossary">Glossario</button>
+                    <button class="tab-btn" data-tab="exercises">Esercizi</button>
+                </div>
+
+                <!-- Contenuto della lezione -->
+                <div class="tab-content active" id="content-tab">
+                    <div class="lesson-content">
+                        <h2>Benvenuti nel Mondo della Programmazione!</h2>
                         
-                        <p>Imparerai a:</p>
+                        <p>La programmazione è l'arte e la scienza di comunicare con i computer, dando loro istruzioni per eseguire compiti specifici. In questo corso, imparerai i fondamenti della programmazione e acquisirai le competenze necessarie per risolvere problemi attraverso il codice.</p>
+                        
+                        <h3>Perché Imparare a Programmare?</h3>
+                        
                         <ul>
-                            <li>Comprendere e applicare i concetti fondamentali della programmazione</li>
-                            <li>Scrivere codice leggibile e ben strutturato</li>
-                            <li>Risolvere problemi attraverso algoritmi efficaci</li>
-                            <li>Utilizzare le strutture dati appropriate per diverse situazioni</li>
-                            <li>Organizzare il codice utilizzando funzioni e classi</li>
+                            <li><strong>Problem Solving:</strong> La programmazione ti insegna a scomporre problemi complessi in componenti più piccoli e gestibili.</li>
+                            <li><strong>Creatività:</strong> Puoi costruire qualsiasi cosa, da semplici app a soluzioni software complesse.</li>
+                            <li><strong>Carriera:</strong> Le competenze di programmazione sono altamente richieste in quasi tutti i settori.</li>
+                            <li><strong>Automazione:</strong> Puoi automatizzare attività ripetitive per risparmiare tempo e ridurre gli errori.</li>
                         </ul>
                         
-                        <p>Questo corso è adatto sia ai principianti assoluti che a chi desidera consolidare le proprie conoscenze di base. Gli esempi pratici e gli esercizi interattivi ti permetteranno di applicare immediatamente ciò che impari.</p>
+                        <h3>Cosa Sono i Linguaggi di Programmazione?</h3>
                         
-                        <div class="action-buttons">
-                            <a href="/materie/programming/lezione1.html" class="btn-primary">Inizia a Studiare</a>
-                            <a href="/materie/programming/esercizi.html" class="btn-secondary">Visualizza Esercizi</a>
-                            <a href="/materie/programming/glossario.html" class="btn-secondary">Consulta Glossario</a>
+                        <p>I linguaggi di programmazione sono strumenti che usiamo per comunicare con i computer. Ogni linguaggio ha la sua sintassi e le sue regole, simili alle lingue umane. Alcuni esempi comuni includono:</p>
+                        
+                        <div class="info-box">
+                            <h4>Linguaggi di Programmazione Popolari</h4>
+                            <ul>
+                                <li><strong>Python:</strong> Conosciuto per la sua semplicità e leggibilità, ideale per principianti.</li>
+                                <li><strong>JavaScript:</strong> Il linguaggio del web, usato per rendere i siti web interattivi.</li>
+                                <li><strong>Java:</strong> Utilizzato per applicazioni di enterprise e Android.</li>
+                                <li><strong>C/C++:</strong> Linguaggi potenti utilizzati per sviluppo di sistemi e prestazioni elevate.</li>
+                                <li><strong>SQL:</strong> Specializzato nell'interrogazione e manipolazione dei database.</li>
+                            </ul>
                         </div>
-                    </div>
-                </section>
+                        
+                        <h3>Come Funziona la Programmazione?</h3>
+                        
+                        <p>A un livello fondamentale, la programmazione consiste nel dare istruzioni chiare e precise a un computer. Queste istruzioni, o algoritmi, vengono scritte in linguaggi di programmazione che vengono poi convertiti in codice macchina che il computer può comprendere ed eseguire.</p>
+                        
+                        <div class="code-block">
+                            <pre><code># Esempio di un semplice programma Python
+print("Hello, World!")
+</code></pre>
+                        </div>
+                        
+                        <p>Questo semplice programma Python mostra una delle operazioni più basilari: visualizzare un testo sullo schermo. Anche se sembra semplice, comprende molti concetti fondamentali che esploreremo in questo corso.</p>
+                        
+                        <h3>Concetti Chiave della Programmazione</h3>
+                        
+                        <ol>
+                            <li><strong>Variabili e Tipi di Dati:</strong> Contenitori per memorizzare informazioni.</li>
+                            <li><strong>Strutture di Controllo:</strong> Meccanismi per controllare il flusso di esecuzione (if, else, while, for).</li>
+                            <li><strong>Funzioni:</strong> Blocchi di codice riutilizzabili che eseguono operazioni specifiche.</li>
+                            <li><strong>Strutture Dati:</strong> Modi per organizzare e memorizzare i dati (array, liste, dizionari).</li>
+                            <li><strong>Algoritmi:</strong> Serie di passaggi per risolvere problemi specifici.</li>
+                        </ol>
+                        
+                        <div class="tip-block">
+                            <h4>Consiglio per i Principianti</h4>
+                            <p>La programmazione si impara facendo! Non preoccuparti se non capisci tutto subito. Sperimenta con il codice, fai errori e impara da essi. Ogni programmatore esperto è stato prima un principiante.</p>
+                        </div>
+                        
+                        <h3>Strumenti per Programmare</h3>
+                        
+                        <p>Per iniziare a programmare, avrai bisogno di alcuni strumenti di base:</p>
+                        
+                        <ul>
+                            <li><strong>Editor di Testo o IDE:</strong> Dove scriverai il tuo codice (es. Visual Studio Code, PyCharm).</li>
+                            <li><strong>Compilatore o Interprete:</strong> Per convertire il tuo codice in istruzioni che il computer può eseguire.</li>
+                            <li><strong>Terminale o Console:</strong> Per eseguire i tuoi programmi e vedere i risultati.</li>
+                            <li><strong>Debugger:</strong> Per trovare e correggere errori nel tuo codice.</li>
+                        </ul>
+                        
+                        <h3>Il Processo di Sviluppo Software</h3>
+                        
+                        <p>Lo sviluppo software segue generalmente questi passaggi:</p>
+                        
+                        <ol>
+                            <li><strong>Analisi:</strong> Comprendere il problema da risolvere.</li>
+                            <li><strong>Progettazione:</strong> Pianificare la soluzione e definire l'architettura.</li>
+                            <li><strong>Implementazione:</strong> Scrivere il codice effettivo.</li>
+                            <li><strong>Testing:</strong> Verificare che il software funzioni come previsto.</li>
+                            <li><strong>Deployment:</strong> Rilasciare il software agli utenti.</li>
+                            <li><strong>Manutenzione:</strong> Aggiornare e migliorare il software nel tempo.</li>
+                        </ol>
+                        
+                        <div class="example-block">
+                            <h4>Esempio Pratico: Calcolatrice Semplice</h4>
+                            <p>Immagina di voler creare una semplice calcolatrice che somma due numeri:</p>
+                            <div class="code-block">
+                                <pre><code># Definizione della funzione di addizione
+def somma(a, b):
+    return a + b
 
-                <!-- Elenco delle lezioni -->
-                <section class="course-lessons">
-                    <h2>Lezioni del Corso</h2>
-                    <div class="lessons-grid" id="course-lessons-container">
-                        <!-- Lezione 1 -->
-                        <div class="lesson-card">
-                            <div class="lesson-number">01</div>
-                            <div class="lesson-info">
-                                <h3>Introduzione alla Programmazione</h3>
-                                <p>Panoramica sui concetti base della programmazione e sul pensiero computazionale.</p>
-                                <div class="lesson-meta">
-                                    <span class="lesson-duration"><i class="far fa-clock"></i> 30 min</span>
-                                    <span class="lesson-difficulty"><i class="fas fa-signal"></i> Principiante</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress" style="width: 0%"></div>
-                                </div>
+# Input dell'utente
+num1 = float(input("Inserisci il primo numero: "))
+num2 = float(input("Inserisci il secondo numero: "))
+
+# Calcolo e output
+risultato = somma(num1, num2)
+print(f"La somma di {num1} e {num2} è {risultato}")
+</code></pre>
                             </div>
-                            <a href="/materie/programming/lezione1.html" class="lesson-link">
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
+                            <p>Questo esempio mostra come prendere input dall'utente, elaborarlo attraverso una funzione e visualizzare un risultato.</p>
                         </div>
                         
-                        <!-- Lezione 2 -->
-                        <div class="lesson-card">
-                            <div class="lesson-number">02</div>
-                            <div class="lesson-info">
-                                <h3>Variabili e Tipi di Dati</h3>
-                                <p>Come memorizzare e manipolare dati nei tuoi programmi.</p>
-                                <div class="lesson-meta">
-                                    <span class="lesson-duration"><i class="far fa-clock"></i> 45 min</span>
-                                    <span class="lesson-difficulty"><i class="fas fa-signal"></i> Principiante</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress" style="width: 0%"></div>
-                                </div>
-                            </div>
-                            <a href="/materie/programming/lezione2.html" class="lesson-link">
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
+                        <h3>La Programmazione nel Mondo Reale</h3>
                         
-                        <!-- Lezione 3 -->
-                        <div class="lesson-card">
-                            <div class="lesson-number">03</div>
-                            <div class="lesson-info">
-                                <h3>Controllo di Flusso</h3>
-                                <p>Condizioni e cicli per controllare l'esecuzione del tuo programma.</p>
-                                <div class="lesson-meta">
-                                    <span class="lesson-duration"><i class="far fa-clock"></i> 50 min</span>
-                                    <span class="lesson-difficulty"><i class="fas fa-signal"></i> Principiante</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress" style="width: 0%"></div>
-                                </div>
-                            </div>
-                            <a href="/materie/programming/lezione3.html" class="lesson-link">
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
+                        <p>La programmazione è ovunque intorno a noi:</p>
                         
-                        <!-- Lezione 4 -->
-                        <div class="lesson-card">
-                            <div class="lesson-number">04</div>
-                            <div class="lesson-info">
-                                <h3>Funzioni</h3>
-                                <p>Creare blocchi di codice riutilizzabili per organizzare meglio i tuoi programmi.</p>
-                                <div class="lesson-meta">
-                                    <span class="lesson-duration"><i class="far fa-clock"></i> 40 min</span>
-                                    <span class="lesson-difficulty"><i class="fas fa-signal"></i> Intermedio</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress" style="width: 0%"></div>
-                                </div>
-                            </div>
-                            <a href="/materie/programming/lezione4.html" class="lesson-link">
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
+                        <ul>
+                            <li>Le app sui nostri smartphone</li>
+                            <li>I siti web che visitiamo</li>
+                            <li>I giochi che giochiamo</li>
+                            <li>I sistemi che controllano semafori, automobili e dispositivi medici</li>
+                            <li>L'intelligenza artificiale e il machine learning</li>
+                        </ul>
                         
-                        <!-- Lezione 5 -->
-                        <div class="lesson-card">
-                            <div class="lesson-number">05</div>
-                            <div class="lesson-info">
-                                <h3>Strutture Dati</h3>
-                                <p>Liste, dizionari e altre strutture per organizzare i dati in modo efficiente.</p>
-                                <div class="lesson-meta">
-                                    <span class="lesson-duration"><i class="far fa-clock"></i> 55 min</span>
-                                    <span class="lesson-difficulty"><i class="fas fa-signal"></i> Intermedio</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress" style="width: 0%"></div>
-                                </div>
-                            </div>
-                            <a href="/materie/programming/lezione5.html" class="lesson-link">
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
+                        <p>Con le competenze di programmazione, puoi contribuire a questi campi e potenzialmente cambiare il mondo!</p>
                         
-                        <!-- Lezione 6 -->
-                        <div class="lesson-card">
-                            <div class="lesson-number">06</div>
-                            <div class="lesson-info">
-                                <h3>Programmazione Orientata agli Oggetti</h3>
-                                <p>Introduzione ai concetti di classi, oggetti e OOP.</p>
-                                <div class="lesson-meta">
-                                    <span class="lesson-duration"><i class="far fa-clock"></i> 60 min</span>
-                                    <span class="lesson-difficulty"><i class="fas fa-signal"></i> Intermedio</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress" style="width: 0%"></div>
-                                </div>
-                            </div>
-                            <a href="/materie/programming/lezione6.html" class="lesson-link">
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
+                        <h3>Prossimi Passi</h3>
                         
-                        <!-- Lezione 7 -->
-                        <div class="lesson-card">
-                            <div class="lesson-number">07</div>
-                            <div class="lesson-info">
-                                <h3>Gestione dei File</h3>
-                                <p>Come leggere e scrivere file con il tuo programma.</p>
-                                <div class="lesson-meta">
-                                    <span class="lesson-duration"><i class="far fa-clock"></i> 45 min</span>
-                                    <span class="lesson-difficulty"><i class="fas fa-signal"></i> Intermedio</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress" style="width: 0%"></div>
-                                </div>
-                            </div>
-                            <a href="/materie/programming/lezione7.html" class="lesson-link">
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
+                        <p>Nella prossima lezione, esploreremo le variabili e i tipi di dati, elementi fondamentali per memorizzare e manipolare informazioni nei tuoi programmi.</p>
                         
-                        <!-- Lezione 8 -->
-                        <div class="lesson-card">
-                            <div class="lesson-number">08</div>
-                            <div class="lesson-info">
-                                <h3>Gestione degli Errori</h3>
-                                <p>Tecniche per prevenire, catturare e gestire gli errori.</p>
-                                <div class="lesson-meta">
-                                    <span class="lesson-duration"><i class="far fa-clock"></i> 40 min</span>
-                                    <span class="lesson-difficulty"><i class="fas fa-signal"></i> Intermedio</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress" style="width: 0%"></div>
-                                </div>
-                            </div>
-                            <a href="/materie/programming/lezione8.html" class="lesson-link">
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                        
-                        <!-- Lezione 9 -->
-                        <div class="lesson-card">
-                            <div class="lesson-number">09</div>
-                            <div class="lesson-info">
-                                <h3>Algoritmi Fondamentali</h3>
-                                <p>Introduzione agli algoritmi di base come ricerca e ordinamento.</p>
-                                <div class="lesson-meta">
-                                    <span class="lesson-duration"><i class="far fa-clock"></i> 50 min</span>
-                                    <span class="lesson-difficulty"><i class="fas fa-signal"></i> Avanzato</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress" style="width: 0%"></div>
-                                </div>
-                            </div>
-                            <a href="/materie/programming/lezione9.html" class="lesson-link">
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                        
-                        <!-- Lezione 10 -->
-                        <div class="lesson-card">
-                            <div class="lesson-number">10</div>
-                            <div class="lesson-info">
-                                <h3>Programmazione Funzionale</h3>
-                                <p>Introduzione ai concetti di programmazione funzionale.</p>
-                                <div class="lesson-meta">
-                                    <span class="lesson-duration"><i class="far fa-clock"></i> 60 min</span>
-                                    <span class="lesson-difficulty"><i class="fas fa-signal"></i> Avanzato</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress" style="width: 0%"></div>
-                                </div>
-                            </div>
-                            <a href="/materie/programming/lezione10.html" class="lesson-link">
-                                <i class="fas fa-arrow-right"></i>
+                        <div class="lesson-navigation">
+                            <span class="prev-lesson disabled">
+                                <i class="fas fa-arrow-left"></i> Lezione Precedente
+                            </span>
+                            <button class="btn-completa">Segna come completata</button>
+                            <a href="/materie/programming/lezione2.html" class="next-lesson">
+                                Lezione Successiva <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
-                </section>
-                
-                <!-- Risorse aggiuntive -->
-                <section class="additional-resources">
-                    <h2>Risorse Aggiuntive</h2>
-                    <div class="resources-grid">
-                        <div class="resource-card">
-                            <div class="resource-icon"><i class="fas fa-book"></i></div>
-                            <div class="resource-info">
-                                <h3>Glossario</h3>
-                                <p>Consulta il glossario completo dei termini di programmazione.</p>
-                                <a href="/materie/programming/glossario.html" class="resource-link">Vai al glossario</a>
-                            </div>
-                        </div>
-                        
-                        <div class="resource-card">
-                            <div class="resource-icon"><i class="fas fa-laptop-code"></i></div>
-                            <div class="resource-info">
-                                <h3>Esercizi Interattivi</h3>
-                                <p>Metti in pratica le tue conoscenze con esercizi interattivi.</p>
-                                <a href="/materie/programming/esercizi.html" class="resource-link">Vai agli esercizi</a>
-                            </div>
-                        </div>
-                        
-                        <div class="resource-card">
-                            <div class="resource-icon"><i class="fas fa-link"></i></div>
-                            <div class="resource-info">
-                                <h3>Link Utili</h3>
-                                <p>Risorse online gratuite per approfondire i concetti di programmazione.</p>
-                                <a href="#" class="resource-link" id="show-resources">Visualizza risorse</a>
-                            </div>
-                        </div>
-                        
-                        <div class="resource-card">
-                            <div class="resource-icon"><i class="fas fa-lightbulb"></i></div>
-                            <div class="resource-info">
-                                <h3>Progetti Pratici</h3>
-                                <p>Idee per progetti che puoi realizzare per consolidare le tue competenze.</p>
-                                <a href="#" class="resource-link" id="show-projects">Visualizza progetti</a>
-                            </div>
-                        </div>
+                </div>
+
+                <!-- Glossario della lezione -->
+                <div class="tab-content" id="glossary-tab">
+                    <!-- Il glossario verrà caricato dinamicamente da content-loader.js -->
+                    <div class="loading-content">
+                        <i class="fas fa-spinner fa-spin"></i> Caricamento glossario...
                     </div>
-                </section>
-                
-                <!-- Commenti e feedback -->
-                <section class="course-feedback">
-                    <h2>Commenti e Feedback</h2>
-                    <div class="feedback-container">
-                        <div class="rating-summary">
-                            <div class="average-rating">
-                                <span class="rating-value">4.8</span>
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <span class="rating-count">128 valutazioni</span>
-                            </div>
-                            <div class="rating-bars">
-                                <div class="rating-bar-item">
-                                    <span class="bar-label">5 stelle</span>
-                                    <div class="bar-container">
-                                        <div class="bar" style="width: 75%"></div>
-                                    </div>
-                                    <span class="bar-percent">75%</span>
-                                </div>
-                                <div class="rating-bar-item">
-                                    <span class="bar-label">4 stelle</span>
-                                    <div class="bar-container">
-                                        <div class="bar" style="width: 18%"></div>
-                                    </div>
-                                    <span class="bar-percent">18%</span>
-                                </div>
-                                <div class="rating-bar-item">
-                                    <span class="bar-label">3 stelle</span>
-                                    <div class="bar-container">
-                                        <div class="bar" style="width: 5%"></div>
-                                    </div>
-                                    <span class="bar-percent">5%</span>
-                                </div>
-                                <div class="rating-bar-item">
-                                    <span class="bar-label">2 stelle</span>
-                                    <div class="bar-container">
-                                        <div class="bar" style="width: 1%"></div>
-                                    </div>
-                                    <span class="bar-percent">1%</span>
-                                </div>
-                                <div class="rating-bar-item">
-                                    <span class="bar-label">1 stella</span>
-                                    <div class="bar-container">
-                                        <div class="bar" style="width: 1%"></div>
-                                    </div>
-                                    <span class="bar-percent">1%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="comments-section">
-                            <h3>Commenti Recenti</h3>
-                            <div class="comment">
-                                <div class="comment-header">
-                                    <div class="comment-author">
-                                        <img src="/images/profile-placeholder.png" alt="Utente" class="author-image">
-                                        <div class="author-info">
-                                            <span class="author-name">Marco B.</span>
-                                            <div class="comment-stars">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <span class="comment-date">2 giorni fa</span>
-                                </div>
-                                <div class="comment-body">
-                                    <p>Ottimo corso per chi inizia da zero! Gli esempi sono chiari e gli esercizi aiutano davvero a consolidare i concetti. Consigliato!</p>
-                                </div>
-                            </div>
-                            <div class="comment">
-                                <div class="comment-header">
-                                    <div class="comment-author">
-                                        <img src="/images/profile-placeholder.png" alt="Utente" class="author-image">
-                                        <div class="author-info">
-                                            <span class="author-name">Laura M.</span>
-                                            <div class="comment-stars">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <span class="comment-date">1 settimana fa</span>
-                                </div>
-                                <div class="comment-body">
-                                    <p>Ho trovato il materiale molto ben strutturato. I glossari sono utilissimi per ripassare i concetti. Vorrei solo che ci fossero più esercizi nella sezione degli algoritmi.</p>
-                                </div>
-                            </div>
-                            <a href="#" class="btn-view-all">Visualizza tutti i commenti</a>
-                        </div>
+                </div>
+
+                <!-- Esercizi della lezione -->
+                <div class="tab-content" id="exercises-tab">
+                    <!-- Gli esercizi verranno caricati dinamicamente da content-loader.js -->
+                    <div class="loading-content">
+                        <i class="fas fa-spinner fa-spin"></i> Caricamento esercizi...
                     </div>
-                </section>
+                </div>
             </div>
         </main>
     </div>
 
-    <!-- Modali per risorse e progetti -->
-    <div class="modal" id="resources-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Risorse Online per la Programmazione</h3>
-                <span class="close-modal">&times;</span>
-            </div>
-            <div class="modal-body">
-                <ul class="resources-list">
-                    <li>
-                        <h4>Python.org</h4>
-                        <p>Il sito ufficiale di Python con documentazione, tutorial e risorse.</p>
-                        <a href="https://python.org" target="_blank">Visita il sito</a>
-                    </li>
-                    <li>
-                        <h4>MDN Web Docs</h4>
-                        <p>Documentazione completa su JavaScript e programmazione web.</p>
-                        <a href="https://developer.mozilla.org" target="_blank">Visita il sito</a>
-                    </li>
-                    <li>
-                        <h4>W3Schools</h4>
-                        <p>Tutorial e riferimenti per numerosi linguaggi di programmazione.</p>
-                        <a href="https://www.w3schools.com" target="_blank">Visita il sito</a>
-                    </li>
-                    <li>
-                        <h4>GeeksforGeeks</h4>
-                        <p>Articoli, tutorial e problemi su algoritmi e strutture dati.</p>
-                        <a href="https://www.geeksforgeeks.org" target="_blank">Visita il sito</a>
-                    </li>
-                    <li>
-                        <h4>Codecademy</h4>
-                        <p>Corsi interattivi di programmazione per vari linguaggi.</p>
-                        <a href="https://www.codecademy.com" target="_blank">Visita il sito</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal" id="projects-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Progetti Pratici per Esercitarsi</h3>
-                <span class="close-modal">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div class="project-item">
-                    <h4>Calcolatrice</h4>
-                    <p><strong>Difficoltà:</strong> Principiante</p>
-                    <p><strong>Descrizione:</strong> Crea una calcolatrice che supporti le operazioni matematiche di base (addizione, sottrazione, moltiplicazione, divisione). Puoi implementarla come programma a riga di comando o con interfaccia grafica.</p>
-                    <p><strong>Concetti applicati:</strong> Variabili, operatori, funzioni, input/output, strutture di controllo.</p>
-                </div>
-                <div class="project-item">
-                    <h4>Gestore di Todo List</h4>
-                    <p><strong>Difficoltà:</strong> Principiante/Intermedio</p>
-                    <p><strong>Descrizione:</strong> Sviluppa un'applicazione per gestire una lista di cose da fare. Gli utenti dovrebbero poter aggiungere, rimuovere, modificare e contrassegnare come completati i vari task.</p>
-                    <p><strong>Concetti applicati:</strong> Strutture dati, funzioni, gestione file (opzionale per salvare/caricare la lista).</p>
-                </div>
-                <div class="project-item">
-                    <h4>Gioco del Tris (Tic-Tac-Toe)</h4>
-                    <p><strong>Difficoltà:</strong> Intermedio</p>
-                    <p><strong>Descrizione:</strong> Implementa il classico gioco del tris per due giocatori. Bonus: aggiungere un'intelligenza artificiale per giocare contro il computer.</p>
-                    <p><strong>Concetti applicati:</strong> Array bidimensionali, funzioni, algoritmi, interfaccia utente.</p>
-                </div>
-                <div class="project-item">
-                    <h4>Sistema di Gestione Biblioteca</h4>
-                    <p><strong>Difficoltà:</strong> Avanzato</p>
-                    <p><strong>Descrizione:</strong> Crea un sistema per gestire i libri di una biblioteca, con funzionalità per aggiungere/rimuovere libri, gestire prestiti e restituzioni, cercare libri per titolo/autore/categoria.</p>
-                    <p><strong>Concetti applicati:</strong> Programmazione orientata agli oggetti, database o file per la persistenza dei dati, gestione degli errori.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-python.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-javascript.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.js"></script>
     <script src="/js/app.js"></script>
-    <script>
-        // Aggiorna il progresso delle lezioni quando la pagina si carica
-        document.addEventListener('DOMContentLoaded', function() {
-            const progressoLezioni = JSON.parse(localStorage.getItem('progressoLezioni')) || {};
-            
-            // Seleziona tutte le lezioni
-            document.querySelectorAll('.lesson-card').forEach(card => {
-                const link = card.querySelector('.lesson-link');
-                if (!link) return;
-                
-                const lezioneId = link.getAttribute('href');
-                const progresso = progressoLezioni[lezioneId];
-                
-                if (progresso) {
-                    const progressBar = card.querySelector('.progress');
-                    if (progressBar) {
-                        progressBar.style.width = `${progresso.percentuale}%`;
-                    }
-                    
-                    // Aggiungi badge "completato" se 100%
-                    if (progresso.percentuale === 100) {
-                        card.querySelector('.lesson-info').classList.add('completed');
-                        
-                        if (!card.querySelector('.completed-badge')) {
-                            const badge = document.createElement('span');
-                            badge.className = 'completed-badge';
-                            badge.innerHTML = '<i class="fas fa-check-circle"></i>';
-                            card.querySelector('.lesson-info').appendChild(badge);
-                        }
-                    }
-                }
-            });
-            
-            // Gestione modali
-            const resourcesModal = document.getElementById('resources-modal');
-            const projectsModal = document.getElementById('projects-modal');
-            const showResourcesBtn = document.getElementById('show-resources');
-            const showProjectsBtn = document.getElementById('show-projects');
-            const closeButtons = document.querySelectorAll('.close-modal');
-            
-            showResourcesBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                resourcesModal.style.display = 'block';
-            });
-            
-            showProjectsBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                projectsModal.style.display = 'block';
-            });
-            
-            closeButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    resourcesModal.style.display = 'none';
-                    projectsModal.style.display = 'none';
-                });
-            });
-            
-            window.addEventListener('click', function(event) {
-                if (event.target === resourcesModal) {
-                    resourcesModal.style.display = 'none';
-                }
-                if (event.target === projectsModal) {
-                    projectsModal.style.display = 'none';
-                }
-            });
-        });
-    </script>
-    
-    <style>
-        /* Stili aggiuntivi per modali e recensioni */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            overflow: auto;
-        }
-        
-        .modal-content {
-            background-color: var(--bg-color);
-            margin: 10% auto;
-            padding: 0;
-            width: 70%;
-            max-width: 800px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            animation: modalFadeIn 0.3s;
-        }
-        
-        @keyframes modalFadeIn {
-            from {opacity: 0; transform: translateY(-30px);}
-            to {opacity: 1; transform: translateY(0);}
-        }
-        
-        .modal-header {
-            padding: 15px 20px;
-            background-color: var(--primary-color);
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-radius: var(--radius) var(--radius) 0 0;
-        }
-        
-        .modal-header h3 {
-            margin: 0;
-            font-size: 20px;
-        }
-        
-        .close-modal {
-            color: white;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        
-        .close-modal:hover {
-            color: #f8f8f8;
-        }
-        
-        .modal-body {
-            padding: 20px;
-            max-height: 60vh;
-            overflow-y: auto;
-        }
-        
-        .resources-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .resources-list li {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .resources-list li:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        
-        .resources-list h4 {
-            margin-top: 0;
-            margin-bottom: 5px;
-            color: var(--primary-color);
-        }
-        
-        .resources-list p {
-            margin-bottom: 10px;
-        }
-        
-        .resources-list a {
-            color: var(--primary-color);
-            text-decoration: none;
-            display: inline-block;
-            padding: 5px 10px;
-            border: 1px solid var(--primary-color);
-            border-radius: 15px;
-            font-size: 14px;
-            transition: var(--transition);
-        }
-        
-        .resources-list a:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        .project-item {
-            margin-bottom: 25px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .project-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        
-        .project-item h4 {
-            margin-top: 0;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-        
-        .project-item p {
-            margin-bottom: 10px;
-            line-height: 1.5;
-        }
-        
-        /* Sezione commenti e feedback */
-        .course-feedback {
-            background-color: var(--bg-color);
-            border-radius: var(--radius);
-            padding: 25px;
-            box-shadow: var(--shadow);
-            margin-bottom: 30px;
-        }
-        
-        .course-feedback h2 {
-            margin-bottom: 20px;
-            font-size: 24px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .feedback-container {
-            display: flex;
-            gap: 30px;
-        }
-        
-        .rating-summary {
-            flex: 1;
-            max-width: 300px;
-        }
-        
-        .average-rating {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .rating-value {
-            font-size: 48px;
-            font-weight: 700;
-            color: var(--primary-color);
-            display: block;
-            margin-bottom: 10px;
-        }
-        
-        .stars {
-            color: #FFD700;
-            font-size: 24px;
-            margin-bottom: 5px;
-        }
-        
-        .rating-count {
-            color: var(--text-light);
-            font-size: 14px;
-        }
-        
-        .rating-bars {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        
-        .rating-bar-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .bar-label {
-            width: 60px;
-            text-align: right;
-            font-size: 14px;
-            color: var(--text-light);
-        }
-        
-        .bar-container {
-            flex: 1;
-            height: 8px;
-            background-color: var(--bg-light);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        
-        .bar {
-            height: 100%;
-            background-color: var(--primary-color);
-        }
-        
-        .bar-percent {
-            width: 40px;
-            font-size: 14px;
-            color: var(--text-light);
-        }
-        
-        .comments-section {
-            flex: 2;
-        }
-        
-        .comments-section h3 {
-            margin-bottom: 20px;
-            font-size: 18px;
-        }
-        
-        .comment {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .comment:last-of-type {
-            border-bottom: none;
-        }
-        
-        .comment-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 10px;
-        }
-        
-        .comment-author {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .author-image {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-        }
-        
-        .author-name {
-            font-weight: 600;
-            display: block;
-            margin-bottom: 3px;
-        }
-        
-        .comment-stars {
-            color: #FFD700;
-            font-size: 14px;
-        }
-        
-        .comment-date {
-            font-size: 12px;
-            color: var(--text-light);
-        }
-        
-        .comment-body p {
-            margin: 0;
-            line-height: 1.6;
-        }
-        
-        @media (max-width: 768px) {
-            .feedback-container {
-                flex-direction: column;
-            }
-            
-            .rating-summary {
-                max-width: 100%;
-            }
-            
-            .modal-content {
-                width: 90%;
-                margin: 20% auto;
-            }
-        }
-    </style>
+    <script src="/js/editor.js"></script>
+    <script src="/js/content-loader.js"></script>
 </body>
 </html>

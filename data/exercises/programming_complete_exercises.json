@@ -1,0 +1,164 @@
+{
+  "courseId": "programming",
+  "title": "Esercizi Completi del Corso di Programmazione",
+  "categories": [
+    {
+      "id": "basic",
+      "title": "Esercizi di Base",
+      "description": "Esercizi fondamentali per iniziare a programmare"
+    },
+    {
+      "id": "flow",
+      "title": "Controllo di Flusso",
+      "description": "Esercizi su condizioni e cicli"
+    },
+    {
+      "id": "functions",
+      "title": "Funzioni",
+      "description": "Esercizi sulla creazione e utilizzo di funzioni"
+    },
+    {
+      "id": "datastructures",
+      "title": "Strutture Dati",
+      "description": "Esercizi su liste, dizionari e altre strutture"
+    },
+    {
+      "id": "oop",
+      "title": "Programmazione Orientata agli Oggetti",
+      "description": "Esercizi su classi e oggetti"
+    },
+    {
+      "id": "algorithms",
+      "title": "Algoritmi",
+      "description": "Esercizi di implementazione algoritmica"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "intro-hello-world",
+      "title": "Hello World",
+      "description": "Scrivi un programma che stampi 'Hello, World!' sulla console.",
+      "difficulty": "principiante",
+      "category": "basic",
+      "relatedLessons": ["lezione1"],
+      "languages": {
+        "python": {
+          "startingCode": "# Scrivi un programma che stampi 'Hello, World!'\n\ndef main():\n    # Scrivi il tuo codice qui\n    pass\n\nmain()",
+          "solution": "# Scrivi un programma che stampi 'Hello, World!'\n\ndef main():\n    print(\"Hello, World!\")\n\nmain()",
+          "hint": "Usa la funzione print() per mostrare testo sullo schermo."
+        },
+        "javascript": {
+          "startingCode": "// Scrivi un programma che stampi 'Hello, World!'\n\nfunction main() {\n    // Scrivi il tuo codice qui\n}\n\nmain();",
+          "solution": "// Scrivi un programma che stampi 'Hello, World!'\n\nfunction main() {\n    console.log(\"Hello, World!\");\n}\n\nmain();",
+          "hint": "Usa console.log() per mostrare testo nella console JavaScript."
+        }
+      },
+      "testCode": "function testSolution(code, language) {\n  if (language === 'python') {\n    // Verifica se l'output contiene 'Hello, World!'\n    const output = runPythonCode(code);\n    return output.includes('Hello, World!');\n  } else if (language === 'javascript') {\n    // Verifica se il codice contiene console.log('Hello, World!')\n    return /console\\.log\\(['\"]Hello, World!['\"]\\)/.test(code);\n  }\n  return false;\n}"
+    },
+    {
+      "id": "variables-sum",
+      "title": "Somma di due numeri",
+      "description": "Scrivi un programma che sommi due numeri (5 e 3) e stampi il risultato.",
+      "difficulty": "principiante",
+      "category": "basic",
+      "relatedLessons": ["lezione2"],
+      "languages": {
+        "python": {
+          "startingCode": "# Scrivi un programma che sommi 5 e 3 e stampi il risultato\n\ndef calcola_somma():\n    # Inserisci qui il tuo codice\n    pass\n\ncalcola_somma()",
+          "solution": "# Scrivi un programma che sommi 5 e 3 e stampi il risultato\n\ndef calcola_somma():\n    a = 5\n    b = 3\n    somma = a + b\n    print(somma)\n\ncalcola_somma()",
+          "hint": "Assegna i valori a due variabili, poi usa l'operatore + per sommarli."
+        },
+        "javascript": {
+          "startingCode": "// Scrivi un programma che sommi 5 e 3 e stampi il risultato\n\nfunction calcolaSomma() {\n    // Inserisci qui il tuo codice\n}\n\ncalcolaSomma();",
+          "solution": "// Scrivi un programma che sommi 5 e 3 e stampi il risultato\n\nfunction calcolaSomma() {\n    let a = 5;\n    let b = 3;\n    let somma = a + b;\n    console.log(somma);\n}\n\ncalcolaSomma();",
+          "hint": "Assegna i valori a due variabili, poi usa l'operatore + per sommarli."
+        }
+      },
+      "testCode": "function testSolution(code, language) {\n  if (language === 'python') {\n    const output = runPythonCode(code);\n    return output.includes('8');\n  } else if (language === 'javascript') {\n    return /console\\.log\\(.*8.*\\)/.test(code) || /console\\.log\\(.*[a-zA-Z0-9_].*\\)/.test(code);\n  }\n  return false;\n}"
+    },
+    {
+      "id": "conditionals-max",
+      "title": "Trovare il numero maggiore",
+      "description": "Scrivi un programma che prenda due numeri e stampi il maggiore dei due.",
+      "difficulty": "principiante",
+      "category": "flow",
+      "relatedLessons": ["lezione3"],
+      "languages": {
+        "python": {
+          "startingCode": "# Scrivi un programma che prenda due numeri e stampi il maggiore\n\ndef trova_maggiore(a, b):\n    # Inserisci qui il tuo codice\n    pass\n\n# Test con alcuni esempi\ntrova_maggiore(5, 10)\ntrova_maggiore(20, 7)\ntrova_maggiore(8, 8)",
+          "solution": "# Scrivi un programma che prenda due numeri e stampi il maggiore\n\ndef trova_maggiore(a, b):\n    if a > b:\n        print(a)\n    elif b > a:\n        print(b)\n    else:\n        print(\"I numeri sono uguali\")\n\n# Test con alcuni esempi\ntrova_maggiore(5, 10)\ntrova_maggiore(20, 7)\ntrova_maggiore(8, 8)",
+          "hint": "Usa le istruzioni if, elif ed else per confrontare i numeri."
+        },
+        "javascript": {
+          "startingCode": "// Scrivi un programma che prenda due numeri e stampi il maggiore\n\nfunction trovaMaggiore(a, b) {\n    // Inserisci qui il tuo codice\n}\n\n// Test con alcuni esempi\ntrovaMaggiore(5, 10);\ntrovaMaggiore(20, 7);\ntrovaMaggiore(8, 8);",
+          "solution": "// Scrivi un programma che prenda due numeri e stampi il maggiore\n\nfunction trovaMaggiore(a, b) {\n    if (a > b) {\n        console.log(a);\n    } else if (b > a) {\n        console.log(b);\n    } else {\n        console.log(\"I numeri sono uguali\");\n    }\n}\n\n// Test con alcuni esempi\ntrovaMaggiore(5, 10);\ntrovaMaggiore(20, 7);\ntrovaMaggiore(8, 8);",
+          "hint": "Usa le istruzioni if, else if ed else per confrontare i numeri."
+        }
+      },
+      "testCode": "function testSolution(code, language) {\n  if (language === 'python') {\n    const output = runPythonCode(code);\n    // Verifica che l'output contenga almeno '10' e '20' (i risultati attesi)\n    return output.includes('10') && output.includes('20');\n  } else if (language === 'javascript') {\n    // Verifica che ci siano condizionali e log dei risultati\n    return code.includes('if') && code.includes('console.log');\n  }\n  return false;\n}"
+    },
+    {
+      "id": "loops-sum",
+      "title": "Somma di numeri in un intervallo",
+      "description": "Scrivi un programma che calcoli la somma di tutti i numeri da 1 a n (dove n è specificato).",
+      "difficulty": "principiante",
+      "category": "flow",
+      "relatedLessons": ["lezione3"],
+      "languages": {
+        "python": {
+          "startingCode": "# Scrivi un programma che calcoli la somma dei numeri da 1 a n\n\ndef somma_numeri(n):\n    # Inserisci qui il tuo codice\n    pass\n\n# Test con n = 5 (il risultato dovrebbe essere 15)\nprint(somma_numeri(5))",
+          "solution": "# Scrivi un programma che calcoli la somma dei numeri da 1 a n\n\ndef somma_numeri(n):\n    somma = 0\n    for i in range(1, n+1):\n        somma += i\n    return somma\n\n# Test con n = 5 (il risultato dovrebbe essere 15)\nprint(somma_numeri(5))",
+          "hint": "Usa un ciclo for con range() per iterare da 1 a n, aggiungendo ogni numero a una variabile somma."
+        },
+        "javascript": {
+          "startingCode": "// Scrivi un programma che calcoli la somma dei numeri da 1 a n\n\nfunction sommaNumeri(n) {\n    // Inserisci qui il tuo codice\n}\n\n// Test con n = 5 (il risultato dovrebbe essere 15)\nconsole.log(sommaNumeri(5));",
+          "solution": "// Scrivi un programma che calcoli la somma dei numeri da 1 a n\n\nfunction sommaNumeri(n) {\n    let somma = 0;\n    for (let i = 1; i <= n; i++) {\n        somma += i;\n    }\n    return somma;\n}\n\n// Test con n = 5 (il risultato dovrebbe essere 15)\nconsole.log(sommaNumeri(5));",
+          "hint": "Usa un ciclo for per iterare da 1 a n, aggiungendo ogni numero a una variabile somma."
+        }
+      },
+      "testCode": "function testSolution(code, language) {\n  if (language === 'python') {\n    const output = runPythonCode(code);\n    return output.includes('15');\n  } else if (language === 'javascript') {\n    // Verifica che ci sia un ciclo e un return/console.log del risultato\n    return code.includes('for') && (code.includes('return') || code.includes('console.log'));\n  }\n  return false;\n}"
+    },
+    {
+      "id": "function-factorial",
+      "title": "Calcolo del fattoriale",
+      "description": "Scrivi una funzione che calcoli il fattoriale di un numero n (n! = 1 × 2 × ... × n).",
+      "difficulty": "intermedio",
+      "category": "functions",
+      "relatedLessons": ["lezione4"],
+      "languages": {
+        "python": {
+          "startingCode": "# Scrivi una funzione che calcoli il fattoriale di un numero n\n\ndef fattoriale(n):\n    # Inserisci qui il tuo codice\n    pass\n\n# Test con alcuni esempi\nprint(fattoriale(5))  # Dovrebbe restituire 120\nprint(fattoriale(0))  # Dovrebbe restituire 1",
+          "solution": "# Scrivi una funzione che calcoli il fattoriale di un numero n\n\ndef fattoriale(n):\n    if n == 0 or n == 1:\n        return 1\n    else:\n        risultato = 1\n        for i in range(2, n+1):\n            risultato *= i\n        return risultato\n\n# Test con alcuni esempi\nprint(fattoriale(5))  # Dovrebbe restituire 120\nprint(fattoriale(0))  # Dovrebbe restituire 1",
+          "hint": "Gestisci i casi speciali (0 e 1) separatamente, poi usa un ciclo per moltiplicare i numeri da 2 a n."
+        },
+        "javascript": {
+          "startingCode": "// Scrivi una funzione che calcoli il fattoriale di un numero n\n\nfunction fattoriale(n) {\n    // Inserisci qui il tuo codice\n}\n\n// Test con alcuni esempi\nconsole.log(fattoriale(5));  // Dovrebbe restituire 120\nconsole.log(fattoriale(0));  // Dovrebbe restituire 1",
+          "solution": "// Scrivi una funzione che calcoli il fattoriale di un numero n\n\nfunction fattoriale(n) {\n    if (n === 0 || n === 1) {\n        return 1;\n    } else {\n        let risultato = 1;\n        for (let i = 2; i <= n; i++) {\n            risultato *= i;\n        }\n        return risultato;\n    }\n}\n\n// Test con alcuni esempi\nconsole.log(fattoriale(5));  // Dovrebbe restituire 120\nconsole.log(fattoriale(0));  // Dovrebbe restituire 1",
+          "hint": "Gestisci i casi speciali (0 e 1) separatamente, poi usa un ciclo per moltiplicare i numeri da 2 a n."
+        }
+      },
+      "testCode": "function testSolution(code, language) {\n  if (language === 'python') {\n    const output = runPythonCode(code);\n    return output.includes('120') && output.includes('1');\n  } else if (language === 'javascript') {\n    // Verifica che ci sia sia una gestione dei casi base che un ciclo\n    return (code.includes('===') || code.includes('==')) && code.includes('for') && code.includes('return');\n  }\n  return false;\n}"
+    },
+    {
+      "id": "recursion-factorial",
+      "title": "Fattoriale ricorsivo",
+      "description": "Riscrivere la funzione fattoriale utilizzando la ricorsione anziché un ciclo.",
+      "difficulty": "intermedio",
+      "category": "functions",
+      "relatedLessons": ["lezione4", "lezione9"],
+      "languages": {
+        "python": {
+          "startingCode": "# Scrivi una funzione ricorsiva che calcoli il fattoriale di un numero n\n\ndef fattoriale_ricorsivo(n):\n    # Inserisci qui il tuo codice\n    pass\n\n# Test con alcuni esempi\nprint(fattoriale_ricorsivo(5))  # Dovrebbe restituire 120\nprint(fattoriale_ricorsivo(0))  # Dovrebbe restituire 1",
+          "solution": "# Scrivi una funzione ricorsiva che calcoli il fattoriale di un numero n\n\ndef fattoriale_ricorsivo(n):\n    if n == 0 or n == 1:\n        return 1\n    else:\n        return n * fattoriale_ricorsivo(n-1)\n\n# Test con alcuni esempi\nprint(fattoriale_ricorsivo(5))  # Dovrebbe restituire 120\nprint(fattoriale_ricorsivo(0))  # Dovrebbe restituire 1",
+          "hint": "In una funzione ricorsiva, definisci prima i casi base (0 e 1), poi per altri valori la funzione deve chiamare se stessa con un argomento più piccolo."
+        },
+        "javascript": {
+          "startingCode": "// Scrivi una funzione ricorsiva che calcoli il fattoriale di un numero n\n\nfunction fattorialeRicorsivo(n) {\n    // Inserisci qui il tuo codice\n}\n\n// Test con alcuni esempi\nconsole.log(fattorialeRicorsivo(5));  // Dovrebbe restituire 120\nconsole.log(fattorialeRicorsivo(0));  // Dovrebbe restituire 1",
+          "solution": "// Scrivi una funzione ricorsiva che calcoli il fattoriale di un numero n\n\nfunction fattorialeRicorsivo(n) {\n    if (n === 0 || n === 1) {\n        return 1;\n    } else {\n        return n * fattorialeRicorsivo(n-1);\n    }\n}\n\n// Test con alcuni esempi\nconsole.log(fattorialeRicorsivo(5));  // Dovrebbe restituire 120\nconsole.log(fattorialeRicorsivo(0));  // Dovrebbe restituire 1",
+          "hint": "In una funzione ricorsiva, definisci prima i casi base (0 e 1), poi per altri valori la funzione deve chiamare se stessa con un argomento più piccolo."
+        }
+      },
+      "testCode": "function testSolution(code, language) {\n  if (language === 'python') {\n    const output = runPythonCode(code);\n    // Verifica l'output e che sia presente la ricorsione\n    return output.includes('120') && code.includes('fattoriale_ricorsivo(n-1)');\n  } else if (language === 'javascript') {\n    // Verifica che ci sia la chiamata ricorsiva\n    return code.includes('fattorialeRicorsivo(n-1)');\n  }\n  return false;\n}"
+    }
+  ]
+}

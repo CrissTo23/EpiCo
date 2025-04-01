@@ -2,6 +2,7 @@
 :root {
     --primary-color: #4285f4;
     --primary-dark: #3367d6;
+    --primary-light: #e8f0fe;
     --secondary-color: #fbbc05;
     --accent-color: #34a853;
     --danger-color: #ea4335;
@@ -13,8 +14,9 @@
     --border-color: #dadce0;
     --sidebar-width: 280px;
     --header-height: 60px;
-    --radius: 8px;
-    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --radius: 10px;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 5px 15px rgba(0, 0, 0, 0.12);
     --transition: all 0.3s ease;
     --font-main: 'Roboto', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
 }
@@ -88,10 +90,26 @@ ul {
     flex: 1;
     overflow-y: auto;
     padding: 15px 0;
+    /* Aggiungi scrollbar personalizzata */
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) transparent;
+}
+
+.sidebar-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 6px;
 }
 
 .sidebar-menu ul li {
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 }
 
 .sidebar-menu .menu-item > a {
@@ -118,7 +136,7 @@ ul {
 }
 
 .sidebar-menu .menu-item.active > a {
-    background-color: #e8f0fe;
+    background-color: var(--primary-light);
     color: var(--primary-color);
 }
 
@@ -131,14 +149,16 @@ ul {
     transform: rotate(180deg);
 }
 
+/* Miglioramento sottomenu scorrevole */
 .submenu {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.4s ease-in-out;
 }
 
 .menu-dropdown.open .submenu {
-    max-height: 300px;
+    /* Altezza dinamica gestita da JavaScript */
+    overflow-y: auto;
 }
 
 .submenu li a {
@@ -147,11 +167,29 @@ ul {
     color: var(--text-light);
     font-weight: 400;
     transition: var(--transition);
+    position: relative;
 }
 
 .submenu li a:hover {
     color: var(--primary-color);
     background-color: var(--bg-light);
+}
+
+.submenu li.active a {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.submenu li.active a::before {
+    content: "";
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
 }
 
 .sidebar-footer {
@@ -180,7 +218,7 @@ ul {
 .top-bar {
     height: var(--header-height);
     background-color: var(--bg-color);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: center;
     padding: 0 20px;
@@ -211,6 +249,13 @@ ul {
     border: 1px solid var(--border-color);
     border-radius: 24px;
     font-size: 15px;
+    transition: var(--transition);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
 }
 
 .search-button {
@@ -222,6 +267,11 @@ ul {
     border: none;
     color: var(--text-light);
     cursor: pointer;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .user-profile {
@@ -240,6 +290,22 @@ ul {
     flex: 1;
     overflow-y: auto;
     padding: 20px;
+    /* Aggiungi scrollbar personalizzata */
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) transparent;
+}
+
+.content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.content::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 4px;
 }
 
 /* Sezioni Home */
@@ -262,6 +328,11 @@ ul {
     padding: 25px;
     box-shadow: var(--shadow);
     margin-bottom: 30px;
+    transition: var(--transition);
+}
+
+.categories-section:hover, .recently-viewed:hover {
+    box-shadow: var(--shadow-hover);
 }
 
 .categories-section h2, .recently-viewed h2 {
@@ -298,11 +369,11 @@ ul {
 
 .category-card:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-hover);
 }
 
 .category-icon {
-    background-color: #e8f0fe;
+    background-color: var(--primary-light);
     color: var(--primary-color);
     width: 60px;
     height: 60px;
@@ -338,6 +409,7 @@ ul {
 
 .btn-explore:hover {
     background-color: var(--primary-dark);
+    transform: translateY(-2px);
 }
 
 .lesson-list {
@@ -353,12 +425,18 @@ ul {
     border-radius: var(--radius);
     padding: 15px;
     border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.lesson-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
 }
 
 .lesson-icon {
     width: 40px;
     height: 40px;
-    background-color: #e8f0fe;
+    background-color: var(--primary-light);
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -412,107 +490,19 @@ ul {
     color: white;
 }
 
-/* Pagina Lezione */
-.lesson-header {
-    background-color: var(--bg-color);
-    border-radius: var(--radius);
-    padding: 25px;
-    margin-bottom: 20px;
-    box-shadow: var(--shadow);
+.completed-badge {
+    color: var(--accent-color);
+    margin-left: 10px;
 }
 
-.lesson-navigation {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+/* Stili aggiuntivi per le animazioni */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.lesson-content {
-    background-color: var(--bg-color);
-    border-radius: var(--radius);
-    padding: 30px;
-    box-shadow: var(--shadow);
-}
-
-.lesson-content h1 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: var(--text-color);
-}
-
-.lesson-content h2 {
-    font-size: 24px;
-    margin: 30px 0 15px;
-    color: var(--text-color);
-}
-
-.lesson-content h3 {
-    font-size: 20px;
-    margin: 25px 0 10px;
-    color: var(--text-color);
-}
-
-.lesson-content p {
-    margin-bottom: 15px;
-    line-height: 1.7;
-}
-
-.lesson-content ul, .lesson-content ol {
-    margin: 15px 0;
-    padding-left: 20px;
-}
-
-.lesson-content ul li, .lesson-content ol li {
-    margin-bottom: 10px;
-}
-
-.lesson-content pre {
-    background-color: var(--bg-dark);
-    padding: 15px;
-    border-radius: var(--radius);
-    overflow-x: auto;
-    margin: 15px 0;
-}
-
-.lesson-content code {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: var(--bg-dark);
-    padding: 2px 5px;
-    border-radius: 4px;
-}
-
-.code-block {
-    background-color: #2d2d2d;
-    color: #f8f8f2;
-    padding: 20px;
-    border-radius: var(--radius);
-    margin: 20px 0;
-    overflow-x: auto;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-.example-block {
-    background-color: #f0f7ff;
-    border-left: 4px solid var(--primary-color);
-    padding: 15px;
-    margin: 20px 0;
-    border-radius: 0 var(--radius) var(--radius) 0;
-}
-
-.tip-block {
-    background-color: #e6f7ee;
-    border-left: 4px solid var(--accent-color);
-    padding: 15px;
-    margin: 20px 0;
-    border-radius: 0 var(--radius) var(--radius) 0;
-}
-
-.warning-block {
-    background-color: #fff8e6;
-    border-left: 4px solid var(--secondary-color);
-    padding: 15px;
-    margin: 20px 0;
-    border-radius: 0 var(--radius) var(--radius) 0;
+.category-cards, .lesson-list {
+    animation: fadeIn 0.5s ease-out;
 }
 
 /* Media Queries per responsività */

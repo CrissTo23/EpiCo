@@ -1,9 +1,7 @@
 {
-  "lesson": {
-    "id": "lezione1",
-    "title": "Introduzione alla Programmazione",
-    "course": "programming"
-  },
+  "courseId": "programming",
+  "lessonId": "lezione1",
+  "title": "Esercizi: Introduzione alla Programmazione",
   "exercises": [
     {
       "id": "intro-hello-world",
