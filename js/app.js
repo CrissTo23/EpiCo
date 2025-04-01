@@ -1,3 +1,5 @@
+const BASE_PATH = '/epico';
+
 // Registrazione del Service Worker
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
@@ -88,13 +90,13 @@ function cercaLezioni(query) {
     }
     
     // Reindirizza alla pagina di ricerca
-    window.location.href = `/ricerca.html?q=${encodeURIComponent(query)}`;
+    window.location.href = `${BASE_PATH}/ricerca.html?q=${encodeURIComponent(query)}`;
 }
 
 // Funzione per caricare i dati dei corsi
 async function loadCoursesData() {
     try {
-        const response = await fetch('/data/courses.json');
+        const response = await fetch(`${BASE_PATH}/data/courses.json`);
         if (!response.ok) {
             throw new Error('Errore nel caricamento dei dati dei corsi');
         }
@@ -136,7 +138,7 @@ function generateSidebar(courses) {
         
         // Aggiungi link al corso
         const overviewLi = document.createElement('li');
-        overviewLi.innerHTML = `<a href="/materie/${course.id}/index.html">Panoramica</a>`;
+        overviewLi.innerHTML = `<a href="${BASE_PATH}/materie/${course.id}/index.html">Panoramica</a>`;
         submenu.appendChild(overviewLi);
         
         // Aggiungi lezioni

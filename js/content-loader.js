@@ -12,6 +12,7 @@ let coursesData = null;
 let currentCourse = null;
 let currentLesson = null;
 let contentCache = {};
+const BASE_PATH = '/epico'; // Aggiungi questa linea
 
 /**
  * Estrae informazioni dal percorso della pagina corrente
@@ -19,7 +20,9 @@ let contentCache = {};
  */
 function extractPageInfo() {
     const path = window.location.pathname;
-    const courseMatch = path.match(/\/materie\/([^\/]+)/);
+    // Rimuovi il prefisso BASE_PATH se presente
+    const relativePath = path.startsWith(BASE_PATH) ? path.substring(BASE_PATH.length) : path;
+    const courseMatch = relativePath.match(/\/materie\/([^\/]+)/);
     
     if (!courseMatch) return null;
     
@@ -27,7 +30,7 @@ function extractPageInfo() {
     let lessonId = null;
     
     // Controlla se siamo in una pagina di lezione
-    const lessonMatch = path.match(/\/materie\/[^\/]+\/lezione(\d+)\.html/);
+    const lessonMatch = relativePath.match(/\/materie\/[^\/]+\/lezione(\d+)\.html/);
     if (lessonMatch) {
         lessonId = `lezione${lessonMatch[1]}`;
     }
@@ -36,8 +39,8 @@ function extractPageInfo() {
         courseId: courseId,
         lessonId: lessonId,
         isLesson: !!lessonId,
-        isGlossary: path.includes('/glossario.html'),
-        isExercises: path.includes('/esercizi.html')
+        isGlossary: relativePath.includes('/glossario.html'),
+        isExercises: relativePath.includes('/esercizi.html')
     };
 }
 
