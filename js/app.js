@@ -1,7 +1,7 @@
 // Registrazione del Service Worker
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
+        navigator.serviceWorker.register('/epico/service-worker.js')
             .then(registration => {
                 console.log('ServiceWorker registrato con successo:', registration.scope);
             })
