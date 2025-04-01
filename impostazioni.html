@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+    <!-- Aggiungi questo elemento base per GitHub Pages -->
+    <base href="/epico/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EpiCo - Piattaforma Didattica</title>
+    <title>Impostazioni - EpiCo</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#4285f4">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="EpiCo">
-    <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" href="images/icon-152x152.png">
     <!-- Font Awesome per le icone -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -27,39 +29,56 @@
             <div class="sidebar-content">
                 <nav class="sidebar-menu">
                     <ul>
-                        <li class="menu-item active">
+                        <li class="menu-item">
                             <a href="index.html"><i class="fas fa-home"></i> Home</a>
                         </li>
+                        
+                        <!-- Programmazione -->
                         <li class="menu-item menu-dropdown">
                             <a href="#" class="dropdown-toggle">
-                                <i class="fas fa-code"></i> Programmazione <i class="fas fa-chevron-down"></i>
+                                <i class="fas fa-code"></i> Principi di Programmazione <i class="fas fa-chevron-down"></i>
                             </a>
                             <ul class="submenu">
-                                <li><a href="materie/programmazione/lezione1.html">Intro alla Programmazione</a></li>
-                                <li><a href="materie/programmazione/lezione2.html">Variabili e Tipi di Dati</a></li>
-                                <li><a href="materie/programmazione/lezione3.html">Controllo di Flusso</a></li>
+                                <li><a href="materie/programming/index.html">Panoramica</a></li>
+                                <li><a href="materie/programming/lezione1.html">Introduzione alla Programmazione</a></li>
+                                <li><a href="materie/programming/lezione2.html">Variabili e Tipi di Dati</a></li>
+                                <li><a href="materie/programming/lezione3.html">Controllo di Flusso</a></li>
+                                <li><a href="materie/programming/lezione4.html">Funzioni</a></li>
+                                <li><a href="materie/programming/lezione5.html">Strutture Dati</a></li>
+                                <li><a href="materie/programming/lezione6.html">Programmazione OOP</a></li>
+                                <li><a href="materie/programming/lezione7.html">Gestione dei File</a></li>
+                                <li><a href="materie/programming/lezione8.html">Gestione degli Errori</a></li>
+                                <li><a href="materie/programming/lezione9.html">Algoritmi Fondamentali</a></li>
+                                <li><a href="materie/programming/lezione10.html">Programmazione Funzionale</a></li>
+                                <li><a href="materie/programming/glossario.html"><i class="fas fa-book"></i> Glossario</a></li>
+                                <li><a href="materie/programming/esercizi.html"><i class="fas fa-laptop-code"></i> Esercizi</a></li>
                             </ul>
                         </li>
-                        <li class="menu-item menu-dropdown">
-                            <a href="#" class="dropdown-toggle">
-                                <i class="fas fa-database"></i> Database <i class="fas fa-chevron-down"></i>
-                            </a>
-                            <ul class="submenu">
-                                <li><a href="materie/database/lezione1.html">Introduzione ai Database</a></li>
-                                <li><a href="materie/database/lezione2.html">SQL Base</a></li>
-                                <li><a href="materie/database/lezione3.html">Relazioni</a></li>
-                            </ul>
-                        </li>
+                        
+                        <!-- Web Development -->
                         <li class="menu-item menu-dropdown">
                             <a href="#" class="dropdown-toggle">
                                 <i class="fas fa-laptop-code"></i> Web Development <i class="fas fa-chevron-down"></i>
                             </a>
                             <ul class="submenu">
+                                <li><a href="materie/webdev/index.html">Panoramica</a></li>
                                 <li><a href="materie/webdev/lezione1.html">HTML Fondamenti</a></li>
                                 <li><a href="materie/webdev/lezione2.html">CSS Styling</a></li>
                                 <li><a href="materie/webdev/lezione3.html">JavaScript Base</a></li>
+                                <li><a href="materie/webdev/lezione4.html">Responsive Design</a></li>
+                                <li><a href="materie/webdev/lezione5.html">JavaScript Avanzato</a></li>
+                                <li><a href="materie/webdev/lezione6.html">DOM Manipulation</a></li>
+                                <li><a href="materie/webdev/lezione7.html">API e AJAX</a></li>
+                                <li><a href="materie/webdev/lezione8.html">Framework Front-end</a></li>
+                                <li><a href="materie/webdev/lezione9.html">Node.js</a></li>
+                                <li><a href="materie/webdev/lezione10.html">Sviluppo Full-Stack</a></li>
+                                <li><a href="materie/webdev/glossario.html"><i class="fas fa-book"></i> Glossario</a></li>
+                                <li><a href="materie/webdev/esercizi.html"><i class="fas fa-laptop-code"></i> Esercizi</a></li>
                             </ul>
                         </li>
+                        
+                        <!-- Altri menu (Architecture, Networks, Mathematics) possono essere aggiunti qui -->
+                        
                         <li class="menu-item">
                             <a href="preferiti.html"><i class="fas fa-star"></i> Preferiti</a>
                         </li>
@@ -71,7 +90,7 @@
             </div>
             
             <div class="sidebar-footer">
-                <a href="impostazioni.html"><i class="fas fa-cog"></i> Impostazioni</a>
+                <a href="impostazioni.html" class="active"><i class="fas fa-cog"></i> Impostazioni</a>
             </div>
         </aside>
 
@@ -86,64 +105,67 @@
                     <button class="search-button"><i class="fas fa-search"></i></button>
                 </div>
                 <div class="user-profile">
-                    <img src="images/profile-placeholder.jpg" alt="Profilo" class="profile-image">
+                    <img src="images/profile-placeholder.png" alt="Profilo" class="profile-image">
                 </div>
             </header>
 
             <div class="content">
                 <section class="welcome-section">
-                    <h1>Benvenuto in EpiCo</h1>
-                    <p>La tua piattaforma di apprendimento personalizzata. Esplora le materie disponibili dal menu laterale.</p>
+                    <h1>Impostazioni</h1>
+                    <p>Personalizza la tua esperienza sulla piattaforma EpiCo.</p>
                 </section>
 
-                <section class="categories-section">
-                    <h2>Materie Disponibili</h2>
-                    <div class="category-cards">
-                        <div class="category-card">
-                            <div class="category-icon"><i class="fas fa-code"></i></div>
-                            <h3>Programmazione</h3>
-                            <p>Impara le basi e i concetti avanzati della programmazione</p>
-                            <a href="materie/programmazione/index.html" class="btn-explore">Esplora</a>
-                        </div>
-                        <div class="category-card">
-                            <div class="category-icon"><i class="fas fa-database"></i></div>
-                            <h3>Database</h3>
-                            <p>Scopri come progettare e gestire database relazionali</p>
-                            <a href="materie/database/index.html" class="btn-explore">Esplora</a>
-                        </div>
-                        <div class="category-card">
-                            <div class="category-icon"><i class="fas fa-laptop-code"></i></div>
-                            <h3>Web Development</h3>
-                            <p>Crea siti web moderni con HTML, CSS e JavaScript</p>
-                            <a href="materie/webdev/index.html" class="btn-explore">Esplora</a>
-                        </div>
+                <section class="settings-section">
+                    <div class="settings-card">
+                        <h2>Impostazioni generali</h2>
+                        <form id="settings-form" class="settings-form">
+                            <div class="form-group">
+                                <label for="theme-selector">Tema</label>
+                                <select id="theme-selector" name="theme">
+                                    <option value="light">Chiaro</option>
+                                    <option value="dark">Scuro</option>
+                                    <option value="auto">Automatico (in base al sistema)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="font-size">Dimensione del testo</label>
+                                <div class="range-container">
+                                    <input type="range" id="font-size" name="fontSize" min="80" max="120" value="100">
+                                    <span class="range-value">100%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="save-progress" name="saveProgress" checked>
+                                    Salva automaticamente i progressi
+                                </label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="notifications" name="notifications" checked>
+                                    Attiva notifiche
+                                </label>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary">Salva impostazioni</button>
+                                <button type="button" id="reset-settings" class="btn-secondary">Ripristina predefinite</button>
+                            </div>
+                        </form>
                     </div>
-                </section>
-
-                <section class="recently-viewed">
-                    <h2>Lezioni Recenti</h2>
-                    <div class="lesson-list">
-                        <div class="lesson-item">
-                            <div class="lesson-icon"><i class="fas fa-book"></i></div>
-                            <div class="lesson-details">
-                                <h4>Introduzione alla Programmazione</h4>
-                                <p>Programmazione - Lezione 1</p>
-                                <div class="progress-bar">
-                                    <div class="progress" style="width: 75%"></div>
-                                </div>
+                    
+                    <div class="settings-card">
+                        <h2>Dati e privacy</h2>
+                        <div class="settings-info">
+                            <p>EpiCo salva i dati di apprendimento solo localmente sul tuo dispositivo. Non inviamo né memorizziamo nessun dato sui nostri server.</p>
+                            
+                            <div class="form-actions">
+                                <button type="button" id="clear-data" class="btn-danger">Cancella tutti i dati salvati</button>
+                                <button type="button" id="export-data" class="btn-secondary">Esporta i tuoi dati</button>
                             </div>
-                            <a href="materie/programmazione/lezione1.html" class="btn-continue">Continua</a>
-                        </div>
-                        <div class="lesson-item">
-                            <div class="lesson-icon"><i class="fas fa-book"></i></div>
-                            <div class="lesson-details">
-                                <h4>HTML Fondamenti</h4>
-                                <p>Web Development - Lezione 1</p>
-                                <div class="progress-bar">
-                                    <div class="progress" style="width: 30%"></div>
-                                </div>
-                            </div>
-                            <a href="materie/webdev/lezione1.html" class="btn-continue">Continua</a>
                         </div>
                     </div>
                 </section>
@@ -152,5 +174,344 @@
     </div>
 
     <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inizializza il form con i valori salvati
+            loadSettings();
+            
+            // Gestisci il salvataggio delle impostazioni
+            const settingsForm = document.getElementById('settings-form');
+            if (settingsForm) {
+                settingsForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    saveSettings();
+                });
+            }
+            
+            // Gestisci il ripristino delle impostazioni
+            const resetButton = document.getElementById('reset-settings');
+            if (resetButton) {
+                resetButton.addEventListener('click', function() {
+                    resetSettings();
+                });
+            }
+            
+            // Gestisci la cancellazione dei dati
+            const clearButton = document.getElementById('clear-data');
+            if (clearButton) {
+                clearButton.addEventListener('click', function() {
+                    if (confirm('Sei sicuro di voler cancellare tutti i dati salvati? Questa azione non può essere annullata.')) {
+                        clearAllData();
+                    }
+                });
+            }
+            
+            // Gestisci l'esportazione dei dati
+            const exportButton = document.getElementById('export-data');
+            if (exportButton) {
+                exportButton.addEventListener('click', function() {
+                    exportUserData();
+                });
+            }
+            
+            // Aggiorna il valore mostrato per il range
+            const fontSizeRange = document.getElementById('font-size');
+            const rangeValue = document.querySelector('.range-value');
+            if (fontSizeRange && rangeValue) {
+                fontSizeRange.addEventListener('input', function() {
+                    rangeValue.textContent = fontSizeRange.value + '%';
+                });
+            }
+            
+            function loadSettings() {
+                const settings = JSON.parse(localStorage.getItem('appSettings')) || {
+                    theme: 'light',
+                    fontSize: 100,
+                    saveProgress: true,
+                    notifications: true
+                };
+                
+                // Imposta i valori del form
+                document.getElementById('theme-selector').value = settings.theme;
+                document.getElementById('font-size').value = settings.fontSize;
+                document.getElementById('save-progress').checked = settings.saveProgress;
+                document.getElementById('notifications').checked = settings.notifications;
+                
+                // Aggiorna il valore mostrato
+                document.querySelector('.range-value').textContent = settings.fontSize + '%';
+                
+                // Applica le impostazioni
+                applySettings(settings);
+            }
+            
+            function saveSettings() {
+                const settings = {
+                    theme: document.getElementById('theme-selector').value,
+                    fontSize: parseInt(document.getElementById('font-size').value),
+                    saveProgress: document.getElementById('save-progress').checked,
+                    notifications: document.getElementById('notifications').checked
+                };
+                
+                // Salva le impostazioni
+                localStorage.setItem('appSettings', JSON.stringify(settings));
+                
+                // Applica le impostazioni
+                applySettings(settings);
+                
+                // Mostra feedback
+                showFeedback('Impostazioni salvate con successo!');
+            }
+            
+            function resetSettings() {
+                const defaultSettings = {
+                    theme: 'light',
+                    fontSize: 100,
+                    saveProgress: true,
+                    notifications: true
+                };
+                
+                // Ripristina i valori predefiniti nel form
+                document.getElementById('theme-selector').value = defaultSettings.theme;
+                document.getElementById('font-size').value = defaultSettings.fontSize;
+                document.getElementById('save-progress').checked = defaultSettings.saveProgress;
+                document.getElementById('notifications').checked = defaultSettings.notifications;
+                
+                // Aggiorna il valore mostrato
+                document.querySelector('.range-value').textContent = defaultSettings.fontSize + '%';
+                
+                // Applica le impostazioni
+                applySettings(defaultSettings);
+                
+                // Mostra feedback
+                showFeedback('Impostazioni predefinite ripristinate!');
+            }
+            
+            function applySettings(settings) {
+                // Applica il tema
+                document.body.classList.remove('theme-light', 'theme-dark');
+                
+                if (settings.theme === 'auto') {
+                    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    document.body.classList.add(prefersDark ? 'theme-dark' : 'theme-light');
+                } else {
+                    document.body.classList.add('theme-' + settings.theme);
+                }
+                
+                // Applica la dimensione del testo
+                document.documentElement.style.fontSize = settings.fontSize + '%';
+            }
+            
+            function clearAllData() {
+                // Rimuovi tutti i dati dell'app
+                localStorage.removeItem('progressoLezioni');
+                localStorage.removeItem('lezioniRecenti');
+                localStorage.removeItem('lezioniPreferite');
+                localStorage.removeItem('completedExercises');
+                localStorage.removeItem('ricercheRecenti');
+                
+                // Mantieni le impostazioni
+                // localStorage.removeItem('appSettings');
+                
+                // Mostra feedback
+                showFeedback('Tutti i dati sono stati cancellati!');
+            }
+            
+            function exportUserData() {
+                const userData = {
+                    progressoLezioni: JSON.parse(localStorage.getItem('progressoLezioni') || '{}'),
+                    lezioniRecenti: JSON.parse(localStorage.getItem('lezioniRecenti') || '[]'),
+                    lezioniPreferite: JSON.parse(localStorage.getItem('lezioniPreferite') || '[]'),
+                    completedExercises: JSON.parse(localStorage.getItem('completedExercises') || '{}'),
+                    ricercheRecenti: JSON.parse(localStorage.getItem('ricercheRecenti') || '[]'),
+                    appSettings: JSON.parse(localStorage.getItem('appSettings') || '{}')
+                };
+                
+                // Crea un file JSON
+                const dataStr = JSON.stringify(userData, null, 2);
+                const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+                
+                // Crea un link di download e simula il click
+                const exportLink = document.createElement('a');
+                exportLink.setAttribute('href', dataUri);
+                exportLink.setAttribute('download', 'epico_dati_utente.json');
+                document.body.appendChild(exportLink);
+                exportLink.click();
+                document.body.removeChild(exportLink);
+                
+                // Mostra feedback
+                showFeedback('Dati esportati con successo!');
+            }
+            
+            function showFeedback(message) {
+                // Verifica se esiste già un elemento di feedback
+                let feedback = document.querySelector('.settings-feedback');
+                
+                // Se non esiste, crealo
+                if (!feedback) {
+                    feedback = document.createElement('div');
+                    feedback.className = 'settings-feedback';
+                    document.querySelector('.settings-section').appendChild(feedback);
+                }
+                
+                // Imposta il messaggio e mostra il feedback
+                feedback.textContent = message;
+                feedback.classList.add('visible');
+                
+                // Nascondi il feedback dopo 3 secondi
+                setTimeout(() => {
+                    feedback.classList.remove('visible');
+                }, 3000);
+            }
+        });
+    </script>
+    
+    <style>
+        /* Stili per la pagina impostazioni */
+        .settings-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .settings-card {
+            background-color: var(--bg-color);
+            border-radius: var(--radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+        }
+        
+        .settings-card h2 {
+            margin-bottom: 20px;
+            font-size: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .settings-form {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .form-group label {
+            font-weight: 500;
+            font-size: 16px;
+        }
+        
+        .form-group select,
+        .form-group input[type="text"],
+        .form-group input[type="email"] {
+            padding: 10px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            font-size: 16px;
+            background-color: var(--bg-light);
+        }
+        
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+        
+        .range-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .range-container input[type="range"] {
+            flex: 1;
+        }
+        
+        .range-value {
+            font-weight: 500;
+            min-width: 50px;
+            text-align: right;
+        }
+        
+        .form-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .btn-secondary {
+            background-color: var(--bg-light);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--border-color);
+        }
+        
+        .btn-danger {
+            background-color: var(--danger-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .btn-danger:hover {
+            background-color: #d32f2f;
+        }
+        
+        .settings-info {
+            line-height: 1.6;
+            color: var(--text-light);
+        }
+        
+        .settings-feedback {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 6px;
+            font-weight: 500;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s, transform 0.3s;
+            z-index: 1000;
+        }
+        
+        .settings-feedback.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </body>
 </html>

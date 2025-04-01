@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+    <!-- Aggiungi questo elemento base per GitHub Pages -->
+    <base href="/epico/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EpiCo - Piattaforma Didattica</title>
+    <title>Lezioni Recenti - EpiCo</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#4285f4">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="EpiCo">
-    <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" href="images/icon-152x152.png">
     <!-- Font Awesome per le icone -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -27,43 +29,60 @@
             <div class="sidebar-content">
                 <nav class="sidebar-menu">
                     <ul>
-                        <li class="menu-item active">
+                        <li class="menu-item">
                             <a href="index.html"><i class="fas fa-home"></i> Home</a>
                         </li>
+                        
+                        <!-- Programmazione -->
                         <li class="menu-item menu-dropdown">
                             <a href="#" class="dropdown-toggle">
-                                <i class="fas fa-code"></i> Programmazione <i class="fas fa-chevron-down"></i>
+                                <i class="fas fa-code"></i> Principi di Programmazione <i class="fas fa-chevron-down"></i>
                             </a>
                             <ul class="submenu">
-                                <li><a href="materie/programmazione/lezione1.html">Intro alla Programmazione</a></li>
-                                <li><a href="materie/programmazione/lezione2.html">Variabili e Tipi di Dati</a></li>
-                                <li><a href="materie/programmazione/lezione3.html">Controllo di Flusso</a></li>
+                                <li><a href="materie/programming/index.html">Panoramica</a></li>
+                                <li><a href="materie/programming/lezione1.html">Introduzione alla Programmazione</a></li>
+                                <li><a href="materie/programming/lezione2.html">Variabili e Tipi di Dati</a></li>
+                                <li><a href="materie/programming/lezione3.html">Controllo di Flusso</a></li>
+                                <li><a href="materie/programming/lezione4.html">Funzioni</a></li>
+                                <li><a href="materie/programming/lezione5.html">Strutture Dati</a></li>
+                                <li><a href="materie/programming/lezione6.html">Programmazione OOP</a></li>
+                                <li><a href="materie/programming/lezione7.html">Gestione dei File</a></li>
+                                <li><a href="materie/programming/lezione8.html">Gestione degli Errori</a></li>
+                                <li><a href="materie/programming/lezione9.html">Algoritmi Fondamentali</a></li>
+                                <li><a href="materie/programming/lezione10.html">Programmazione Funzionale</a></li>
+                                <li><a href="materie/programming/glossario.html"><i class="fas fa-book"></i> Glossario</a></li>
+                                <li><a href="materie/programming/esercizi.html"><i class="fas fa-laptop-code"></i> Esercizi</a></li>
                             </ul>
                         </li>
-                        <li class="menu-item menu-dropdown">
-                            <a href="#" class="dropdown-toggle">
-                                <i class="fas fa-database"></i> Database <i class="fas fa-chevron-down"></i>
-                            </a>
-                            <ul class="submenu">
-                                <li><a href="materie/database/lezione1.html">Introduzione ai Database</a></li>
-                                <li><a href="materie/database/lezione2.html">SQL Base</a></li>
-                                <li><a href="materie/database/lezione3.html">Relazioni</a></li>
-                            </ul>
-                        </li>
+                        
+                        <!-- Web Development -->
                         <li class="menu-item menu-dropdown">
                             <a href="#" class="dropdown-toggle">
                                 <i class="fas fa-laptop-code"></i> Web Development <i class="fas fa-chevron-down"></i>
                             </a>
                             <ul class="submenu">
+                                <li><a href="materie/webdev/index.html">Panoramica</a></li>
                                 <li><a href="materie/webdev/lezione1.html">HTML Fondamenti</a></li>
                                 <li><a href="materie/webdev/lezione2.html">CSS Styling</a></li>
                                 <li><a href="materie/webdev/lezione3.html">JavaScript Base</a></li>
+                                <li><a href="materie/webdev/lezione4.html">Responsive Design</a></li>
+                                <li><a href="materie/webdev/lezione5.html">JavaScript Avanzato</a></li>
+                                <li><a href="materie/webdev/lezione6.html">DOM Manipulation</a></li>
+                                <li><a href="materie/webdev/lezione7.html">API e AJAX</a></li>
+                                <li><a href="materie/webdev/lezione8.html">Framework Front-end</a></li>
+                                <li><a href="materie/webdev/lezione9.html">Node.js</a></li>
+                                <li><a href="materie/webdev/lezione10.html">Sviluppo Full-Stack</a></li>
+                                <li><a href="materie/webdev/glossario.html"><i class="fas fa-book"></i> Glossario</a></li>
+                                <li><a href="materie/webdev/esercizi.html"><i class="fas fa-laptop-code"></i> Esercizi</a></li>
                             </ul>
                         </li>
+                        
+                        <!-- Altri menu (Architecture, Networks, Mathematics) possono essere aggiunti qui -->
+                        
                         <li class="menu-item">
                             <a href="preferiti.html"><i class="fas fa-star"></i> Preferiti</a>
                         </li>
-                        <li class="menu-item">
+                        <li class="menu-item active">
                             <a href="recenti.html"><i class="fas fa-history"></i> Recenti</a>
                         </li>
                     </ul>
@@ -86,65 +105,29 @@
                     <button class="search-button"><i class="fas fa-search"></i></button>
                 </div>
                 <div class="user-profile">
-                    <img src="images/profile-placeholder.jpg" alt="Profilo" class="profile-image">
+                    <img src="images/profile-placeholder.png" alt="Profilo" class="profile-image">
                 </div>
             </header>
 
             <div class="content">
                 <section class="welcome-section">
-                    <h1>Benvenuto in EpiCo</h1>
-                    <p>La tua piattaforma di apprendimento personalizzata. Esplora le materie disponibili dal menu laterale.</p>
-                </section>
-
-                <section class="categories-section">
-                    <h2>Materie Disponibili</h2>
-                    <div class="category-cards">
-                        <div class="category-card">
-                            <div class="category-icon"><i class="fas fa-code"></i></div>
-                            <h3>Programmazione</h3>
-                            <p>Impara le basi e i concetti avanzati della programmazione</p>
-                            <a href="materie/programmazione/index.html" class="btn-explore">Esplora</a>
-                        </div>
-                        <div class="category-card">
-                            <div class="category-icon"><i class="fas fa-database"></i></div>
-                            <h3>Database</h3>
-                            <p>Scopri come progettare e gestire database relazionali</p>
-                            <a href="materie/database/index.html" class="btn-explore">Esplora</a>
-                        </div>
-                        <div class="category-card">
-                            <div class="category-icon"><i class="fas fa-laptop-code"></i></div>
-                            <h3>Web Development</h3>
-                            <p>Crea siti web moderni con HTML, CSS e JavaScript</p>
-                            <a href="materie/webdev/index.html" class="btn-explore">Esplora</a>
-                        </div>
-                    </div>
+                    <h1>Lezioni recenti</h1>
+                    <p>Visualizza le lezioni che hai visitato di recente e continua il tuo percorso di apprendimento.</p>
                 </section>
 
                 <section class="recently-viewed">
-                    <h2>Lezioni Recenti</h2>
-                    <div class="lesson-list">
-                        <div class="lesson-item">
-                            <div class="lesson-icon"><i class="fas fa-book"></i></div>
-                            <div class="lesson-details">
-                                <h4>Introduzione alla Programmazione</h4>
-                                <p>Programmazione - Lezione 1</p>
-                                <div class="progress-bar">
-                                    <div class="progress" style="width: 75%"></div>
-                                </div>
-                            </div>
-                            <a href="materie/programmazione/lezione1.html" class="btn-continue">Continua</a>
-                        </div>
-                        <div class="lesson-item">
-                            <div class="lesson-icon"><i class="fas fa-book"></i></div>
-                            <div class="lesson-details">
-                                <h4>HTML Fondamenti</h4>
-                                <p>Web Development - Lezione 1</p>
-                                <div class="progress-bar">
-                                    <div class="progress" style="width: 30%"></div>
-                                </div>
-                            </div>
-                            <a href="materie/webdev/lezione1.html" class="btn-continue">Continua</a>
-                        </div>
+                    <h2>Le tue lezioni recenti</h2>
+                    <div class="lesson-list" id="recent-lessons-list">
+                        <!-- Le lezioni recenti verranno caricate qui dinamicamente -->
+                        <div class="empty-state">Caricamento lezioni recenti...</div>
+                    </div>
+                </section>
+                
+                <section class="search-history">
+                    <h2>Ricerche recenti</h2>
+                    <div class="recent-searches" id="recent-searches-list">
+                        <!-- Le ricerche recenti verranno caricate qui dinamicamente -->
+                        <div class="empty-state">Nessuna ricerca recente.</div>
                     </div>
                 </section>
             </div>
@@ -152,5 +135,162 @@
     </div>
 
     <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Carica lezioni recenti
+            loadRecentLessons();
+            
+            // Carica ricerche recenti
+            loadRecentSearches();
+            
+            function loadRecentLessons() {
+                const recentList = document.getElementById('recent-lessons-list');
+                if (!recentList) return;
+                
+                const lezioniRecenti = JSON.parse(localStorage.getItem('lezioniRecenti')) || [];
+                if (lezioniRecenti.length === 0) {
+                    recentList.innerHTML = '<div class="empty-state">Non hai ancora visualizzato lezioni. Inizia a esplorare!</div>';
+                    return;
+                }
+                
+                let html = '';
+                lezioniRecenti.forEach(lezione => {
+                    // Estrai course e lesson id dall'URL della lezione
+                    const match = lezione.match(/\/materie\/([^\/]+)\/lezione(\d+)\.html/);
+                    if (!match) return;
+                    
+                    const courseId = match[1];
+                    const lessonNumber = parseInt(match[2]);
+                    
+                    // Determina i metadati della lezione in base al percorso
+                    let courseTitle, lessonTitle, courseIcon;
+                    
+                    switch(courseId) {
+                        case 'programming':
+                            courseTitle = 'Principi di Programmazione';
+                            courseIcon = 'fa-code';
+                            break;
+                        case 'webdev':
+                            courseTitle = 'Web Development';
+                            courseIcon = 'fa-laptop-code';
+                            break;
+                        case 'architecture':
+                            courseTitle = 'Architettura dei Calcolatori';
+                            courseIcon = 'fa-microchip';
+                            break;
+                        case 'networks':
+                            courseTitle = 'Reti di Calcolatori';
+                            courseIcon = 'fa-network-wired';
+                            break;
+                        case 'mathematics':
+                            courseTitle = 'Matematica Discreta';
+                            courseIcon = 'fa-calculator';
+                            break;
+                        default:
+                            courseTitle = 'Corso';
+                            courseIcon = 'fa-book';
+                    }
+                    
+                    // Determina il titolo della lezione in base al numero
+                    const lessonTitles = {
+                        1: 'Introduzione',
+                        2: 'Concetti Base',
+                        3: 'Controllo di Flusso',
+                        4: 'Funzioni',
+                        5: 'Strutture Dati',
+                        6: 'Programmazione OOP',
+                        7: 'Gestione File',
+                        8: 'Gestione Errori',
+                        9: 'Algoritmi',
+                        10: 'Concetti Avanzati'
+                    };
+                    
+                    lessonTitle = lessonTitles[lessonNumber] || `Lezione ${lessonNumber}`;
+                    
+                    // Ottieni info sul progresso
+                    const progresso = JSON.parse(localStorage.getItem('progressoLezioni')) || {};
+                    const lessonProgress = progresso[lezione] || { percentuale: 0, ultimoAccesso: null };
+                    const dataAccesso = lessonProgress.ultimoAccesso 
+                        ? new Date(lessonProgress.ultimoAccesso).toLocaleDateString() 
+                        : 'N/D';
+                    
+                    html += `
+                    <div class="lesson-item">
+                        <div class="lesson-icon"><i class="fas ${courseIcon}"></i></div>
+                        <div class="lesson-details">
+                            <h4>${lessonTitle}</h4>
+                            <p>${courseTitle} - Ultimo accesso: ${dataAccesso}</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: ${lessonProgress.percentuale}%"></div>
+                            </div>
+                        </div>
+                        <a href="${lezione}" class="btn-continue">Continua</a>
+                    </div>`;
+                });
+                
+                recentList.innerHTML = html;
+            }
+            
+            function loadRecentSearches() {
+                const searchesList = document.getElementById('recent-searches-list');
+                if (!searchesList) return;
+                
+                const ricercheRecenti = JSON.parse(localStorage.getItem('ricercheRecenti')) || [];
+                if (ricercheRecenti.length === 0) {
+                    searchesList.innerHTML = '<div class="empty-state">Non hai ancora effettuato ricerche.</div>';
+                    return;
+                }
+                
+                let html = '<div class="search-chips">';
+                ricercheRecenti.forEach(query => {
+                    html += `
+                    <div class="search-chip">
+                        <span class="chip-text">${query}</span>
+                        <a href="ricerca.html?q=${encodeURIComponent(query)}" class="chip-action">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </div>`;
+                });
+                html += '</div>';
+                
+                searchesList.innerHTML = html;
+            }
+        });
+    </script>
+    
+    <style>
+        .search-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .search-chip {
+            display: flex;
+            align-items: center;
+            background-color: var(--bg-light);
+            border-radius: 20px;
+            padding: 6px 12px;
+            font-size: 14px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .chip-text {
+            margin-right: 8px;
+        }
+        
+        .chip-action {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            transition: color 0.2s ease;
+        }
+        
+        .chip-action:hover {
+            color: var(--primary-dark);
+        }
+    </style>
 </body>
 </html>

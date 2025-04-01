@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+    <!-- Aggiungi questo elemento base per GitHub Pages -->
+    <base href="/epico/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EpiCo - Piattaforma Didattica</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="manifest" href="/manifest.json">
+    <!-- Percorsi modificati - rimuovi lo slash iniziale -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#4285f4">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="EpiCo">
-    <link rel="apple-touch-icon" href="/images/icon-152x152.png">
+    <link rel="apple-touch-icon" href="images/icon-152x152.png">
     <!-- Font Awesome per le icone -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -19,7 +22,7 @@
         <!-- Sidebar/Menu laterale -->
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <img src="/images/logo.png" alt="EpiCo Logo" class="logo">
+                <img src="images/logo.png" alt="EpiCo Logo" class="logo">
                 <h2>EpiCo</h2>
                 <button id="closeSidebar" class="close-sidebar"><i class="fas fa-times"></i></button>
             </div>
@@ -28,7 +31,7 @@
                 <nav class="sidebar-menu">
                     <ul>
                         <li class="menu-item active">
-                            <a href="/index.html"><i class="fas fa-home"></i> Home</a>
+                            <a href="index.html"><i class="fas fa-home"></i> Home</a>
                         </li>
                         
                         <!-- Programmazione -->
@@ -37,19 +40,19 @@
                                 <i class="fas fa-code"></i> Principi di Programmazione <i class="fas fa-chevron-down"></i>
                             </a>
                             <ul class="submenu">
-                                <li><a href="/materie/programming/index.html">Panoramica</a></li>
-                                <li><a href="/materie/programming/lezione1.html">Introduzione alla Programmazione</a></li>
-                                <li><a href="/materie/programming/lezione2.html">Variabili e Tipi di Dati</a></li>
-                                <li><a href="/materie/programming/lezione3.html">Controllo di Flusso</a></li>
-                                <li><a href="/materie/programming/lezione4.html">Funzioni</a></li>
-                                <li><a href="/materie/programming/lezione5.html">Strutture Dati</a></li>
-                                <li><a href="/materie/programming/lezione6.html">Programmazione OOP</a></li>
-                                <li><a href="/materie/programming/lezione7.html">Gestione dei File</a></li>
-                                <li><a href="/materie/programming/lezione8.html">Gestione degli Errori</a></li>
-                                <li><a href="/materie/programming/lezione9.html">Algoritmi Fondamentali</a></li>
-                                <li><a href="/materie/programming/lezione10.html">Programmazione Funzionale</a></li>
-                                <li><a href="/materie/programming/glossario.html"><i class="fas fa-book"></i> Glossario</a></li>
-                                <li><a href="/materie/programming/esercizi.html"><i class="fas fa-laptop-code"></i> Esercizi</a></li>
+                                <li><a href="materie/programming/index.html">Panoramica</a></li>
+                                <li><a href="materie/programming/lezione1.html">Introduzione alla Programmazione</a></li>
+                                <li><a href="materie/programming/lezione2.html">Variabili e Tipi di Dati</a></li>
+                                <li><a href="materie/programming/lezione3.html">Controllo di Flusso</a></li>
+                                <li><a href="materie/programming/lezione4.html">Funzioni</a></li>
+                                <li><a href="materie/programming/lezione5.html">Strutture Dati</a></li>
+                                <li><a href="materie/programming/lezione6.html">Programmazione OOP</a></li>
+                                <li><a href="materie/programming/lezione7.html">Gestione dei File</a></li>
+                                <li><a href="materie/programming/lezione8.html">Gestione degli Errori</a></li>
+                                <li><a href="materie/programming/lezione9.html">Algoritmi Fondamentali</a></li>
+                                <li><a href="materie/programming/lezione10.html">Programmazione Funzionale</a></li>
+                                <li><a href="materie/programming/glossario.html"><i class="fas fa-book"></i> Glossario</a></li>
+                                <li><a href="materie/programming/esercizi.html"><i class="fas fa-laptop-code"></i> Esercizi</a></li>
                             </ul>
                         </li>
                         
@@ -59,19 +62,19 @@
                                 <i class="fas fa-laptop-code"></i> Web Development <i class="fas fa-chevron-down"></i>
                             </a>
                             <ul class="submenu">
-                                <li><a href="/materie/webdev/index.html">Panoramica</a></li>
-                                <li><a href="/materie/webdev/lezione1.html">HTML Fondamenti</a></li>
-                                <li><a href="/materie/webdev/lezione2.html">CSS Styling</a></li>
-                                <li><a href="/materie/webdev/lezione3.html">JavaScript Base</a></li>
-                                <li><a href="/materie/webdev/lezione4.html">Responsive Design</a></li>
-                                <li><a href="/materie/webdev/lezione5.html">JavaScript Avanzato</a></li>
-                                <li><a href="/materie/webdev/lezione6.html">DOM Manipulation</a></li>
-                                <li><a href="/materie/webdev/lezione7.html">API e AJAX</a></li>
-                                <li><a href="/materie/webdev/lezione8.html">Framework Front-end</a></li>
-                                <li><a href="/materie/webdev/lezione9.html">Node.js</a></li>
-                                <li><a href="/materie/webdev/lezione10.html">Sviluppo Full-Stack</a></li>
-                                <li><a href="/materie/webdev/glossario.html"><i class="fas fa-book"></i> Glossario</a></li>
-                                <li><a href="/materie/webdev/esercizi.html"><i class="fas fa-laptop-code"></i> Esercizi</a></li>
+                                <li><a href="materie/webdev/index.html">Panoramica</a></li>
+                                <li><a href="materie/webdev/lezione1.html">HTML Fondamenti</a></li>
+                                <li><a href="materie/webdev/lezione2.html">CSS Styling</a></li>
+                                <li><a href="materie/webdev/lezione3.html">JavaScript Base</a></li>
+                                <li><a href="materie/webdev/lezione4.html">Responsive Design</a></li>
+                                <li><a href="materie/webdev/lezione5.html">JavaScript Avanzato</a></li>
+                                <li><a href="materie/webdev/lezione6.html">DOM Manipulation</a></li>
+                                <li><a href="materie/webdev/lezione7.html">API e AJAX</a></li>
+                                <li><a href="materie/webdev/lezione8.html">Framework Front-end</a></li>
+                                <li><a href="materie/webdev/lezione9.html">Node.js</a></li>
+                                <li><a href="materie/webdev/lezione10.html">Sviluppo Full-Stack</a></li>
+                                <li><a href="materie/webdev/glossario.html"><i class="fas fa-book"></i> Glossario</a></li>
+                                <li><a href="materie/webdev/esercizi.html"><i class="fas fa-laptop-code"></i> Esercizi</a></li>
                             </ul>
                         </li>
                         
@@ -81,19 +84,19 @@
                                 <i class="fas fa-microchip"></i> Architettura dei Calcolatori <i class="fas fa-chevron-down"></i>
                             </a>
                             <ul class="submenu">
-                                <li><a href="/materie/architecture/index.html">Panoramica</a></li>
-                                <li><a href="/materie/architecture/lezione1.html">Introduzione all'Architettura</a></li>
-                                <li><a href="/materie/architecture/lezione2.html">Rappresentazione dei Dati</a></li>
-                                <li><a href="/materie/architecture/lezione3.html">Circuiti Logici</a></li>
-                                <li><a href="/materie/architecture/lezione4.html">CPU: Architettura</a></li>
-                                <li><a href="/materie/architecture/lezione5.html">Memoria</a></li>
-                                <li><a href="/materie/architecture/lezione6.html">Sistemi di I/O</a></li>
-                                <li><a href="/materie/architecture/lezione7.html">Pipeline e Parallelismo</a></li>
-                                <li><a href="/materie/architecture/lezione8.html">Architetture RISC/CISC</a></li>
-                                <li><a href="/materie/architecture/lezione9.html">Multiprocessori</a></li>
-                                <li><a href="/materie/architecture/lezione10.html">Tendenze Future</a></li>
-                                <li><a href="/materie/architecture/glossario.html"><i class="fas fa-book"></i> Glossario</a></li>
-                                <li><a href="/materie/architecture/esercizi.html"><i class="fas fa-laptop-code"></i> Esercizi</a></li>
+                                <li><a href="materie/architecture/index.html">Panoramica</a></li>
+                                <li><a href="materie/architecture/lezione1.html">Introduzione all'Architettura</a></li>
+                                <li><a href="materie/architecture/lezione2.html">Rappresentazione dei Dati</a></li>
+                                <li><a href="materie/architecture/lezione3.html">Circuiti Logici</a></li>
+                                <li><a href="materie/architecture/lezione4.html">CPU: Architettura</a></li>
+                                <li><a href="materie/architecture/lezione5.html">Memoria</a></li>
+                                <li><a href="materie/architecture/lezione6.html">Sistemi di I/O</a></li>
+                                <li><a href="materie/architecture/lezione7.html">Pipeline e Parallelismo</a></li>
+                                <li><a href="materie/architecture/lezione8.html">Architetture RISC/CISC</a></li>
+                                <li><a href="materie/architecture/lezione9.html">Multiprocessori</a></li>
+                                <li><a href="materie/architecture/lezione10.html">Tendenze Future</a></li>
+                                <li><a href="materie/architecture/glossario.html"><i class="fas fa-book"></i> Glossario</a></li>
+                                <li><a href="materie/architecture/esercizi.html"><i class="fas fa-laptop-code"></i> Esercizi</a></li>
                             </ul>
                         </li>
                         
@@ -103,19 +106,19 @@
                                 <i class="fas fa-network-wired"></i> Reti di Calcolatori <i class="fas fa-chevron-down"></i>
                             </a>
                             <ul class="submenu">
-                                <li><a href="/materie/networks/index.html">Panoramica</a></li>
-                                <li><a href="/materie/networks/lezione1.html">Introduzione alle Reti</a></li>
-                                <li><a href="/materie/networks/lezione2.html">Modello OSI e TCP/IP</a></li>
-                                <li><a href="/materie/networks/lezione3.html">Livello Fisico</a></li>
-                                <li><a href="/materie/networks/lezione4.html">Livello Data Link</a></li>
-                                <li><a href="/materie/networks/lezione5.html">Livello Rete e IP</a></li>
-                                <li><a href="/materie/networks/lezione6.html">Routing</a></li>
-                                <li><a href="/materie/networks/lezione7.html">TCP e UDP</a></li>
-                                <li><a href="/materie/networks/lezione8.html">Protocolli Applicativi</a></li>
-                                <li><a href="/materie/networks/lezione9.html">Sicurezza delle Reti</a></li>
-                                <li><a href="/materie/networks/lezione10.html">Reti Avanzate</a></li>
-                                <li><a href="/materie/networks/glossario.html"><i class="fas fa-book"></i> Glossario</a></li>
-                                <li><a href="/materie/networks/esercizi.html"><i class="fas fa-laptop-code"></i> Esercizi</a></li>
+                                <li><a href="materie/networks/index.html">Panoramica</a></li>
+                                <li><a href="materie/networks/lezione1.html">Introduzione alle Reti</a></li>
+                                <li><a href="materie/networks/lezione2.html">Modello OSI e TCP/IP</a></li>
+                                <li><a href="materie/networks/lezione3.html">Livello Fisico</a></li>
+                                <li><a href="materie/networks/lezione4.html">Livello Data Link</a></li>
+                                <li><a href="materie/networks/lezione5.html">Livello Rete e IP</a></li>
+                                <li><a href="materie/networks/lezione6.html">Routing</a></li>
+                                <li><a href="materie/networks/lezione7.html">TCP e UDP</a></li>
+                                <li><a href="materie/networks/lezione8.html">Protocolli Applicativi</a></li>
+                                <li><a href="materie/networks/lezione9.html">Sicurezza delle Reti</a></li>
+                                <li><a href="materie/networks/lezione10.html">Reti Avanzate</a></li>
+                                <li><a href="materie/networks/glossario.html"><i class="fas fa-book"></i> Glossario</a></li>
+                                <li><a href="materie/networks/esercizi.html"><i class="fas fa-laptop-code"></i> Esercizi</a></li>
                             </ul>
                         </li>
                         
@@ -125,34 +128,34 @@
                                 <i class="fas fa-calculator"></i> Matematica Discreta <i class="fas fa-chevron-down"></i>
                             </a>
                             <ul class="submenu">
-                                <li><a href="/materie/mathematics/index.html">Panoramica</a></li>
-                                <li><a href="/materie/mathematics/lezione1.html">Insiemi e Logica</a></li>
-                                <li><a href="/materie/mathematics/lezione2.html">Relazioni e Funzioni</a></li>
-                                <li><a href="/materie/mathematics/lezione3.html">Teoria dei Numeri</a></li>
-                                <li><a href="/materie/mathematics/lezione4.html">Combinatoria</a></li>
-                                <li><a href="/materie/mathematics/lezione5.html">Teoria dei Grafi I</a></li>
-                                <li><a href="/materie/mathematics/lezione6.html">Teoria dei Grafi II</a></li>
-                                <li><a href="/materie/mathematics/lezione7.html">Algebre Booleane</a></li>
-                                <li><a href="/materie/mathematics/lezione8.html">Probabilità Discreta</a></li>
-                                <li><a href="/materie/mathematics/lezione9.html">Linguaggi Formali</a></li>
-                                <li><a href="/materie/mathematics/lezione10.html">Automi e Calcolabilità</a></li>
-                                <li><a href="/materie/mathematics/glossario.html"><i class="fas fa-book"></i> Glossario</a></li>
-                                <li><a href="/materie/mathematics/esercizi.html"><i class="fas fa-laptop-code"></i> Esercizi</a></li>
+                                <li><a href="materie/mathematics/index.html">Panoramica</a></li>
+                                <li><a href="materie/mathematics/lezione1.html">Insiemi e Logica</a></li>
+                                <li><a href="materie/mathematics/lezione2.html">Relazioni e Funzioni</a></li>
+                                <li><a href="materie/mathematics/lezione3.html">Teoria dei Numeri</a></li>
+                                <li><a href="materie/mathematics/lezione4.html">Combinatoria</a></li>
+                                <li><a href="materie/mathematics/lezione5.html">Teoria dei Grafi I</a></li>
+                                <li><a href="materie/mathematics/lezione6.html">Teoria dei Grafi II</a></li>
+                                <li><a href="materie/mathematics/lezione7.html">Algebre Booleane</a></li>
+                                <li><a href="materie/mathematics/lezione8.html">Probabilità Discreta</a></li>
+                                <li><a href="materie/mathematics/lezione9.html">Linguaggi Formali</a></li>
+                                <li><a href="materie/mathematics/lezione10.html">Automi e Calcolabilità</a></li>
+                                <li><a href="materie/mathematics/glossario.html"><i class="fas fa-book"></i> Glossario</a></li>
+                                <li><a href="materie/mathematics/esercizi.html"><i class="fas fa-laptop-code"></i> Esercizi</a></li>
                             </ul>
                         </li>
                         
                         <li class="menu-item">
-                            <a href="/preferiti.html"><i class="fas fa-star"></i> Preferiti</a>
+                            <a href="preferiti.html"><i class="fas fa-star"></i> Preferiti</a>
                         </li>
                         <li class="menu-item">
-                            <a href="/recenti.html"><i class="fas fa-history"></i> Recenti</a>
+                            <a href="recenti.html"><i class="fas fa-history"></i> Recenti</a>
                         </li>
                     </ul>
                 </nav>
             </div>
             
             <div class="sidebar-footer">
-                <a href="/impostazioni.html"><i class="fas fa-cog"></i> Impostazioni</a>
+                <a href="impostazioni.html"><i class="fas fa-cog"></i> Impostazioni</a>
             </div>
         </aside>
 
@@ -167,7 +170,7 @@
                     <button class="search-button"><i class="fas fa-search"></i></button>
                 </div>
                 <div class="user-profile">
-                    <img src="/images/profile-placeholder.png" alt="Profilo" class="profile-image">
+                    <img src="images/profile-placeholder.png" alt="Profilo" class="profile-image">
                 </div>
             </header>
 
@@ -184,31 +187,31 @@
                             <div class="category-icon"><i class="fas fa-code"></i></div>
                             <h3>Principi di Programmazione</h3>
                             <p>Impara le basi e i concetti avanzati della programmazione</p>
-                            <a href="/materie/programming/index.html" class="btn-explore">Esplora</a>
+                            <a href="materie/programming/index.html" class="btn-explore">Esplora</a>
                         </div>
                         <div class="category-card">
                             <div class="category-icon"><i class="fas fa-laptop-code"></i></div>
                             <h3>Web Development</h3>
                             <p>Crea siti web moderni con HTML, CSS e JavaScript</p>
-                            <a href="/materie/webdev/index.html" class="btn-explore">Esplora</a>
+                            <a href="materie/webdev/index.html" class="btn-explore">Esplora</a>
                         </div>
                         <div class="category-card">
                             <div class="category-icon"><i class="fas fa-microchip"></i></div>
                             <h3>Architettura dei Calcolatori</h3>
                             <p>Comprendi come funzionano internamente i computer</p>
-                            <a href="/materie/architecture/index.html" class="btn-explore">Esplora</a>
+                            <a href="materie/architecture/index.html" class="btn-explore">Esplora</a>
                         </div>
                         <div class="category-card">
                             <div class="category-icon"><i class="fas fa-network-wired"></i></div>
                             <h3>Reti di Calcolatori</h3>
                             <p>Scopri come i computer comunicano tra loro</p>
-                            <a href="/materie/networks/index.html" class="btn-explore">Esplora</a>
+                            <a href="materie/networks/index.html" class="btn-explore">Esplora</a>
                         </div>
                         <div class="category-card">
                             <div class="category-icon"><i class="fas fa-calculator"></i></div>
                             <h3>Matematica Discreta</h3>
                             <p>Esplora i fondamenti matematici dell'informatica</p>
-                            <a href="/materie/mathematics/index.html" class="btn-explore">Esplora</a>
+                            <a href="materie/mathematics/index.html" class="btn-explore">Esplora</a>
                         </div>
                     </div>
                 </section>
@@ -261,7 +264,7 @@
         </main>
     </div>
 
-    <script src="/js/app.js"></script>
+    <script src="js/app.js"></script>
     <script>
         // Aggiungiamo funzionalità per i sottomenu scorrevoli
         document.addEventListener('DOMContentLoaded', function() {
